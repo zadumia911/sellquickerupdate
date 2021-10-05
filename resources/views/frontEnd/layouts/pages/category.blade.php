@@ -21,6 +21,7 @@
 		</div>
 	</div>
 </div>
+
  <div class="common_search_area">
  	<div class="container">
  		<div class="row">
