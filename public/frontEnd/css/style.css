@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
-body{
-    font-family: 'Open Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+body {
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     overflow-x: hidden;
-    background: #EEEEEE;
+    background: #eeeeee;
 }
-p{
-	color: #222;
+p {
+    color: #222;
 }
 /*===COMMON CSS===*/
 button,
@@ -20,12 +20,10 @@ ol {
     padding: 0;
 }
 
-
 li {
     display: inline-block;
     list-style: none;
 }
-
 
 a,
 a:hover,
@@ -33,7 +31,7 @@ a:focus {
     color: #222;
     text-decoration: none;
     outline-offset: 0;
-    outline:0;
+    outline: 0;
     transition: 0.35s ease-in-out;
     text-align: left;
 }
@@ -86,7 +84,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .tooltip-inner {
@@ -95,7 +93,7 @@ h6 {
     margin-right: 5px;
     border-radius: 0;
 }
-.anchor{
+.anchor {
     cursor: pointer;
 }
 
@@ -120,11 +118,11 @@ h6 {
 }
 
 .pb30 {
-    padding-bottom: 30px
+    padding-bottom: 30px;
 }
 
 .pb20 {
-    padding-bottom: 20px
+    padding-bottom: 20px;
 }
 
 .mb20 {
@@ -152,12 +150,12 @@ h6 {
 }
 
 .form-control:focus {
-    border: 1px solid #D66B0D;
+    border: 1px solid #d66b0d;
     box-shadow: 0 0;
     outline: 0;
 }
-.lg-hide{
-    display:none;
+.lg-hide {
+    display: none;
 }
 .container {
     max-width: 1310px;
@@ -179,10 +177,10 @@ h6 {
     display: inline-block;
 }
 .header-top-left ul li {
-	margin-right: 16px;
+    margin-right: 16px;
 }
 .header-top-left ul li a {
-	color: #fff;
+    color: #fff;
 }
 .header-top-right a.anchor {
     color: #fff;
@@ -208,32 +206,32 @@ ul.header-top-right li a {
     visibility: hidden;
     transition: 0.35s all;
 }
-.header-top-right ul li:hover .submenu{
+.header-top-right ul li:hover .submenu {
     top: 28px;
     transform: translateY(1);
     opacity: 1;
     visibility: visible;
 }
-.header-top-right ul li ul.submenu li{
+.header-top-right ul li ul.submenu li {
     display: block;
 }
-.header-top-right ul li ul.submenu li a{
+.header-top-right ul li ul.submenu li a {
     display: inline-block;
-    color:#888;
+    color: #888;
     font-weight: 500;
     padding: 4px 0;
 }
-.header-top-right ul li ul.submenu li a:hover{
-    color:#D04551;
+.header-top-right ul li ul.submenu li a:hover {
+    color: #d04551;
 }
 .header-post-ads {
     text-align: right;
 }
 .home-page-modal {
-	padding: 0 20px;
+    padding: 0 20px;
 }
 .post-ads a {
-    background: #DAA734;
+    background: #daa734;
     color: #222 !important;
     text-transform: uppercase !important;
     padding: 10px 6px;
@@ -251,33 +249,33 @@ ul.header-top-right li a {
 }
 
 .main-menu ul li a.active {
-    color: #D66B0D;
+    color: #d66b0d;
 }
 .main-menu ul li a:hover {
-    color: #D66B0D;
+    color: #d66b0d;
 }
 .header-top-right ul li a i {
-	margin-right: 6px;
-	font-weight: 600;
-	color: #fff;
-	font-size: 16px;
+    margin-right: 6px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 16px;
 }
 .section-title {
-	text-align: center;
-	margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 .section-title h2 {
-	text-transform: capitalize;
-	font-size: 20px;
-	color: #222;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #222;
 }
 .section-title p {
-	font-weight: 600;
-	color: #444;
-	text-transform: capitalize;
+    font-weight: 600;
+    color: #444;
+    text-transform: capitalize;
 }
 .publish-ad a {
-    background: #AF2D2D;
+    background: #af2d2d;
     color: #fff !important;
     padding: 13px 22px;
     text-transform: uppercase;
@@ -286,7 +284,7 @@ ul.header-top-right li a {
     border-radius: 50px;
 }
 .account-title {
-    background: #D66B0D;
+    background: #d66b0d;
     color: #fff !important;
     padding: 8px 12px;
     border-radius: 50px;
@@ -299,7 +297,7 @@ ul.header-top-right li a {
     left: -50%;
     background: #fff !important;
     padding: 10px;
-    border-top: 2px solid #D66B0D;
+    border-top: 2px solid #d66b0d;
     visibility: hidden;
     opacity: 0;
     transition: all 0.35s ease;
@@ -322,55 +320,55 @@ ul.header-top-right li a {
     opacity: 1;
 }
 #myModal .modal-header {
-	border-bottom: 0;
-	padding: 0;
+    border-bottom: 0;
+    padding: 0;
 }
 #myModal .modal-header .close {
-	position: absolute;
-	top: 0;
-	right: 10px;
-	background: linear-gradient(to left, #003967 0%, #028789 74%);
-	opacity: 1;
-	height: 50px;
-	width: 50px;
-	padding: 0;
-	border-radius: 50%;
-	color: #fff;
-	font-weight: 400;
-	font-size: 16px;
-	border: 1px solid #003967;
-	z-index:999;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: linear-gradient(to left, #003967 0%, #028789 74%);
+    opacity: 1;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    border: 1px solid #003967;
+    z-index: 999;
 }
 .location-filter button {
-	display: block;
-	width: 100%;
-	text-align: left;
+    display: block;
+    width: 100%;
+    text-align: left;
 }
 #myModal .modal-content {
-	background: rgba(255,255,255,0.9);
-	border: 2px solid #003967;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #003967;
 }
 #myModal .modal-body h3 {
-	line-height: 1.7;
+    line-height: 1.7;
 }
 #myModal .modal-body input {
-	display: block;
-	width: 100%;
-	height: 45px;
-	border: 1px solid #999;
+    display: block;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #999;
 }
 #myModal .modal-body p {
-	text-align: left;
-	font-size: 16px;
-	margin-top: 0;
-	margin-bottom: 8px;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 #myModal .modal-body label {
-	text-align: left;
-	width: 100%;
-	font-weight: 800;
-	font-size: 16px;
-	margin-top: 15px;
+    text-align: left;
+    width: 100%;
+    font-weight: 800;
+    font-size: 16px;
+    margin-top: 15px;
 }
 .header-top {
     background: linear-gradient(#c53030, #9b2c2c);
@@ -381,19 +379,19 @@ ul.header-top-right li a {
     text-align: left;
 }
 #myModal .modal-body form {
-	text-align: left;
+    text-align: left;
 }
 #myModal .modal-body button {
-	background: linear-gradient(to left, #ef3636 0%, #000 74%);
-	color: #fff;
-	padding: 10px 31px;
-	cursor: pointer;
+    background: linear-gradient(to left, #ef3636 0%, #000 74%);
+    color: #fff;
+    padding: 10px 31px;
+    cursor: pointer;
 }
 #myModal .modal-body {
-	padding: 15px 35px;
+    padding: 15px 35px;
 }
 #myModal .modal-dialog {
-	margin: 10.00rem auto;
+    margin: 10rem auto;
 }
 /*==================================
    MAIN HEADER CSS START
@@ -410,9 +408,9 @@ ul.header-top-right li a {
     display: none;
 }
 .main-logo img {
-	margin-right: 8px;
+    margin-right: 8px;
 }
-.tgoogle-ads img{
+.tgoogle-ads img {
     height: 90px;
 }
 .menu-content {
@@ -430,7 +428,7 @@ ul.header-top-right li a {
    Search
 ===================================*/
 .search-and-category {
-    background: #EEEEEE;
+    background: #eeeeee;
     padding-top: 55px;
     padding-bottom: 30px;
 }
@@ -469,7 +467,7 @@ form.main-search-box button {
 form.main-search-box button {
     width: 10%;
     float: left;
-    background: #F56565;
+    background: #f56565;
     height: 40px;
     color: #fff;
 }
@@ -486,11 +484,11 @@ form.main-search-box button {
     margin-top: -4px;
 }
 .location-icon {
-	height: 22px;
+    height: 22px;
 }
 .price-tag {
-	height: 23px;
-	width: 23px;
+    height: 23px;
+    width: 23px;
 }
 .catad {
     text-align: right;
@@ -498,9 +496,9 @@ form.main-search-box button {
     height: 400px;
 }
 .single-category ul li img {
-	height: 45px;
-	width: 45px;
-	object-fit: contain;
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
 }
 .single-category {
     text-align: center;
@@ -518,7 +516,7 @@ form.main-search-box button {
     text-align: center;
 }
 .single-category ul li i.icon {
-    background: #28A691;
+    background: #28a691;
     color: #fff;
     height: 65px;
     line-height: 65px;
@@ -531,7 +529,7 @@ form.main-search-box button {
     box-shadow: 0px 5px 4px 1px #ddd;
 }
 .single-category:hover.single-category ul li i.icon {
-    background: #D66B0D;
+    background: #d66b0d;
 }
 .single-category:hover {
     box-shadow: 0px 5px 4px 1px #ddd;
@@ -545,21 +543,21 @@ form.main-search-box button {
     font-size: 13px;
 }
 .single-category ul li.plus i {
-    color: #D66B0D;
-    border: 1px solid #D66B0D;
+    color: #d66b0d;
+    border: 1px solid #d66b0d;
     padding: 2px 5px;
     border-radius: 50px;
     font-weight: 500;
 }
-.single-category ul li.plus a{
+.single-category ul li.plus a {
     cursor: pointer;
 }
-.browse-all{
+.browse-all {
     text-align: center;
     margin-bottom: 30px;
 }
 .all-category {
-    background: #F5F5F5;
+    background: #f5f5f5;
     padding: 30px 0;
 }
 .allcategory-item {
@@ -584,11 +582,11 @@ form.main-search-box button {
    ADVERTISMENT CSS START
 ===================================*/
 .advertisment {
-    background: #F4F4F4;
+    background: #f4f4f4;
     padding: 15px 0;
 }
 .ads-section {
-    background: #F4F4F4;
+    background: #f4f4f4;
     text-align: center;
     padding-top: 15px;
 }
@@ -604,7 +602,7 @@ form.main-search-box button {
 }
 .single-ads .ads-image img {
     width: 100%;
-    transition: 0.50s all;
+    transition: 0.5s all;
     object-fit: contain;
 }
 
@@ -615,7 +613,7 @@ form.main-search-box button {
     border-top: 1px solid #ddd;
     padding-top: 10px;
 }
-.ads-content ul li{
+.ads-content ul li {
     width: 50%;
     float: left;
 }
@@ -641,7 +639,7 @@ form.main-search-box button {
 }
 .ads-content .title a {
     font-size: 16px;
-    color: #D66B0D;
+    color: #d66b0d;
     height: 55px;
     display: inline-block;
     text-transform: capitalize;
@@ -650,18 +648,18 @@ form.main-search-box button {
     width: 65%;
     float: left;
     font-weight: 600;
-    color: #C13154;
+    color: #c13154;
     margin-top: 6px;
 }
 .wishlist a.ads-content ul.price-wishlist li.price {
     width: 65%;
     float: left;
     font-weight: 600;
-    color: #C13154;
+    color: #c13154;
     margin-top: 6px;
-} 
-.zadu{
-    border: 1px solid #CB3F52;
+}
+.zadu {
+    border: 1px solid #cb3f52;
     padding: 4px 6px;
     font-size: 12px;
     border-radius: 5px;
@@ -674,11 +672,11 @@ form.main-search-box button {
     padding-right: 12px;
 }
 .advertisment .mads {
-	margin: 15px 0;
-	height: 400px;
+    margin: 15px 0;
+    height: 400px;
 }
 .locationad-inner.home {
-    background: #F4F4F4;
+    background: #f4f4f4;
     padding: 5px 15px;
     margin-bottom: 15px;
 }
@@ -686,7 +684,7 @@ form.main-search-box button {
     display: block;
 }
 .locationad-inner button {
-    color: #BC336B;
+    color: #bc336b;
     font-weight: 600;
     margin-top: 10px;
 }
@@ -696,11 +694,11 @@ form.main-search-box button {
     overflow: hidden;
     transition: 0.5s all;
 }
-.new-height{
+.new-height {
     height: auto;
     transition: 0.5s all;
 }
-.removeDiv{
+.removeDiv {
     display: none;
 }
 #location-ads ul li {
@@ -711,7 +709,7 @@ form.main-search-box button {
     padding: 6px 0;
 }
 #location-ads ul li:last-child {
-    border-color:transparent;
+    border-color: transparent;
 }
 #location-ads ul li a {
     color: #222;
@@ -730,7 +728,7 @@ form.main-search-box button {
     padding-top: 110px;
 }
 .post-left a {
-    background: #DAA734;
+    background: #daa734;
     text-transform: uppercase;
     display: inline-block;
     padding: 10px 20px;
@@ -785,7 +783,7 @@ form.main-search-box button {
     background: #fff;
 }
 .custom-bread-inner {
-    background: #E7E7E7;
+    background: #e7e7e7;
     margin-bottom: 20px;
     padding: 25px 25px;
 }
@@ -801,9 +799,9 @@ form.main-search-box button {
     text-transform: capitalize;
 }
 .location-filter {
-	margin-top: 10px;
-	border: 1px solid #ddd;
-	padding: 5px 12px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 5px 12px;
 }
 .filter-and-search {
     margin-top: 12px;
@@ -815,12 +813,12 @@ form.main-search-box button {
     color: #222;
 }
 .location-filter button i {
-    color: #D66B0D;
+    color: #d66b0d;
     font-size: 18px;
     margin-right: 4px;
 }
 .cat-search form {
-    border: 1px solid #D66B0D;
+    border: 1px solid #d66b0d;
     overflow: hidden;
     height: 40px;
     border-radius: 5px;
@@ -829,7 +827,7 @@ form.main-search-box button {
     float: right;
     width: 15%;
     height: 40px;
-    background: #D66B0D;
+    background: #d66b0d;
     color: #fff;
 }
 .cat-search form input {
@@ -849,7 +847,7 @@ form.main-search-box button {
     height: 500px;
     overflow-y: scroll;
 }
-.collapse-area  {
+.collapse-area {
     padding-left: 20px;
 }
 .collapse-area ul li a {
@@ -863,10 +861,12 @@ form.main-search-box button {
     display: inline-block;
     color: #6161ff;
 }
-.tree-menu .closed > a, .tree-menu .opened > a {
+.tree-menu .closed > a,
+.tree-menu .opened > a {
     background-position: 8px 14px !important;
 }
-.tree-menu .closed > a, .tree-menu .opened > a {
+.tree-menu .closed > a,
+.tree-menu .opened > a {
     padding: 10px 35px !important;
     margin: 2px 0 !important;
 }
@@ -902,7 +902,7 @@ form.main-search-box button {
     border-bottom: 1px solid #ddd;
     padding: 17px 0;
 }
- .category-mmenu a {
+.category-mmenu a {
     line-height: 0 !important;
     padding: 10px !important;
     padding-bottom: 18px !important;
@@ -922,7 +922,7 @@ form.main-search-box button {
     margin: 0 2px;
 }
 .commonpanel {
-    background: #F6F7FB;
+    background: #f6f7fb;
 }
 .commonpanelform form {
     text-align: left;
@@ -955,16 +955,17 @@ form.main-search-box button {
 }
 .commonpanelform form label {
     font-weight: 600;
-    color:#222;
+    color: #222;
 }
-.customer-body .table-bordered thead td, .customer-body .table-bordered thead th {
+.customer-body .table-bordered thead td,
+.customer-body .table-bordered thead th {
     color: #222;
 }
 .ads-new {
     text-align: left;
 }
 .commonpanelform form span {
-    color: #E91E63;
+    color: #e91e63;
 }
 .customer-info .name p {
     text-align: center;
@@ -979,14 +980,15 @@ form.main-search-box button {
     text-align: center;
 }
 .adsmakepremium a {
-    background: #4267B2;
+    background: #4267b2;
     color: #fff;
     display: inline-block;
     margin-top: 7px;
     padding: 4px 11px;
     border-radius: 5px;
 }
-.commonpanelform form input, .commonpanelform form input:focus {
+.commonpanelform form input,
+.commonpanelform form input:focus {
     border: 1px solid #ddd;
     outline: 0;
     box-shadow: 0 0;
@@ -994,7 +996,7 @@ form.main-search-box button {
     border-radius: 5px;
 }
 .commonpanelform form button {
-    background: #AF2D2D;
+    background: #af2d2d;
     width: 100%;
     color: #fff;
     padding: 10px 3px;
@@ -1038,7 +1040,7 @@ form.main-search-box button {
 }
 .category.adsection .single-advertisment .image {
     height: 200px;
-}   
+}
 .ls-search .select2 {
     width: 70% !important;
     float: left;
@@ -1062,33 +1064,33 @@ form.main-search-box button {
     width: 30%;
     float: left;
     text-align: center;
-    background: #0F7AD5;
+    background: #0f7ad5;
     color: #fff;
     height: 38px;
 }
-.ls-search i{
+.ls-search i {
     line-height: 38px;
 }
 
 .cat-chechbox {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Hide the browser's default checkbox */
 .cat-chechbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 /* Create a custom checkbox */
@@ -1104,19 +1106,19 @@ form.main-search-box button {
 
 /* When the checkbox is checked, add a blue background */
 .cat-chechbox input:checked ~ .checkmark {
-  background-color: #D66B0D;
+    background-color: #d66b0d;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: "";
+    position: absolute;
+    display: none;
 }
 
 /* Show the checkmark when checked */
 .cat-chechbox input:checked ~ .checkmark:after {
-  display: block;
+    display: block;
 }
 
 /* Style the checkmark/indicator */
@@ -1142,12 +1144,12 @@ form.main-search-box button {
 .commonpanelform .ls-checkbox.auth {
     float: left;
 }
-.commonpanelform .forgatepassowre{
+.commonpanelform .forgatepassowre {
     text-align: right;
 }
 .commonpanelform .forgatepassowre a {
     display: inline-block;
-    color: #D66B0D;
+    color: #d66b0d;
     text-transform: capitalize;
 }
 
@@ -1159,9 +1161,8 @@ form.main-search-box button {
     font-weight: 600;
 }
 .ls-checkbox.auth label a {
-    color: #D66B0D;
+    color: #d66b0d;
 }
-
 
 /*==================================
    CATEGORY PAGE CSS START
@@ -1196,7 +1197,8 @@ form.main-search-box button {
 .sort-form {
     display: block;
 }
-.nice-select .list, .nice-select .list .option {
+.nice-select .list,
+.nice-select .list .option {
     width: 100%;
     display: block;
 }
@@ -1244,13 +1246,12 @@ form.main-search-box button {
 .ads-breadcrumb ul li a {
     font-weight: 600;
 }
-#sortTab 
-{
+#sortTab {
     text-align: right;
     float: right;
     border-color: transparent;
 }
-.sort-form form{
+.sort-form form {
     width: 100%;
 }
 .sort-form select {
@@ -1279,8 +1280,8 @@ form.main-search-box button {
     border-radius: 5px;
 }
 .list-anchor {
-	padding: 35px 0;
-	display: inline-block;
+    padding: 35px 0;
+    display: inline-block;
 }
 .list-ad-info p {
     margin-bottom: 5px;
@@ -1297,12 +1298,12 @@ form.main-search-box button {
     color: #504e70;
     font-weight: 500;
 }
-.list-ad-info h5  a:hover{
+.list-ad-info h5 a:hover {
     color: #555;
 }
 .list-ad-info a.wishlist {
     display: inline-block;
-    color: #CB3F52;
+    color: #cb3f52;
     margin-top: 5px;
     border: 1px solid;
     font-weight: 600;
@@ -1314,7 +1315,7 @@ form.main-search-box button {
     text-align: center;
 }
 .view-details a {
-    background: #CB3F52;
+    background: #cb3f52;
     color: #fff;
     padding: 8px 12px;
     display: inline-block;
@@ -1322,8 +1323,8 @@ form.main-search-box button {
     text-transform: capitalize;
     font-weight: 600;
 }
-.view-details a:hover{
-    border-radius:  5px;
+.view-details a:hover {
+    border-radius: 5px;
 }
 .main-content {
     background: #fff;
@@ -1345,32 +1346,31 @@ form.main-search-box button {
 .sidebar .title {
     margin-bottom: 10px;
 }
-.cpaginate ul li a{
-    border: 1px solid #504e70 ;
+.cpaginate ul li a {
+    border: 1px solid #504e70;
     padding: 4px 13px;
     border-radius: 5px;
 }
-.cpaginate ul li a:hover,.cpaginate ul li.active a{
-    background: #CB3F52;
-    border-color: #CB3F52;
+.cpaginate ul li a:hover,
+.cpaginate ul li.active a {
+    background: #cb3f52;
+    border-color: #cb3f52;
     color: #fff;
 }
-.cpaginate ul li:last-child a{
+.cpaginate ul li:last-child a {
     background: #888;
     border-color: #fff;
     color: #fff;
 }
 .cpaginate {
     margin-top: 15px;
-
 }
-
 
 /*==================================
    DETAILS PAGE CSS START
 ===================================*/
 .commondesign {
-    background: #E7EDEE;
+    background: #e7edee;
     padding: 30px 0;
 }
 .advertisment-left {
@@ -1394,7 +1394,7 @@ form.main-search-box button {
     text-align: right;
     color: #9e9e9e;
 }
-.advertisment-details {    
+.advertisment-details {
     padding: 20px 20px;
 }
 .advertisment-details-header {
@@ -1408,7 +1408,7 @@ form.main-search-box button {
 }
 .advertisment-details-header p a {
     font-weight: 600;
-    color: #D66B0D;
+    color: #d66b0d;
 }
 .user-avatar {
     background-color: #fff;
@@ -1427,7 +1427,7 @@ form.main-search-box button {
     border: 4px solid #ddd;
 }
 .avatar-pic-container img {
-    object-fit: cover;    
+    object-fit: cover;
 }
 .avatar-for-sale {
     text-align: center;
@@ -1475,11 +1475,11 @@ form.main-search-box button {
 }
 .avatar-contact-text h4 {
     font-size: 1.1rem;
-    font-weight: 700;    
+    font-weight: 700;
 }
-.avatar-contact-text p, 
+.avatar-contact-text p,
 .avatar-contact-text h4 {
-    color: #fff;    
+    color: #fff;
 }
 .avatar-contact-btn {
     display: inline-block;
@@ -1505,7 +1505,7 @@ form.main-search-box button {
     border-bottom: 0;
 }
 .customer-phone-details li i {
-    color: #D66B0D;
+    color: #d66b0d;
     font-size: 20px;
     margin-right: 10px;
 }
@@ -1544,7 +1544,7 @@ form.main-search-box button {
     margin-bottom: 25px;
 }
 .product-basic ul {
-	overflow: hidden;
+    overflow: hidden;
 }
 .product-basic ul li {
     width: 50% !important;
@@ -1556,26 +1556,26 @@ form.main-search-box button {
     background: #ddd;
 }
 .share-btn {
-	margin-top: 0;
-	margin-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 .share-btn p {
     margin-bottom: 6px;
 }
- .share-btn.desktop{
-        display: block;
-    }
-    .share-btn.mobile{
-        display: none;
-    }
-    .mobile-chat-phon{
-        display: none;
-    }
+.share-btn.desktop {
+    display: block;
+}
+.share-btn.mobile {
+    display: none;
+}
+.mobile-chat-phon {
+    display: none;
+}
 .dslider-item img {
     object-fit: contain;
 }
 .dslider .owl-nav button.owl-prev {
-    background: rgba(0,165,145,0.5);
+    background: rgba(0, 165, 145, 0.5);
     left: 0%;
     position: absolute;
     height: 65px !important;
@@ -1593,12 +1593,12 @@ form.main-search-box button {
     margin-top: 10px;
 }
 .dslider .owl-nav button.owl-prev:hover {
-    background: #D66B0D;
+    background: #d66b0d;
 }
 
 .dslider .owl-nav button.owl-next {
-    background: rgba(0,165,145,0.5);
-    right:  0%;
+    background: rgba(0, 165, 145, 0.5);
+    right: 0%;
     position: absolute;
     height: 65px !important;
     width: 50px !important;
@@ -1610,7 +1610,7 @@ form.main-search-box button {
 }
 
 .dslider .owl-nav button.owl-next:hover {
-    background: #D66B0D;
+    background: #d66b0d;
 }
 
 .dslider .owl-nav button i {
@@ -1627,7 +1627,7 @@ form.main-search-box button {
 }
 
 .dslider button.owl-dot {
-    background: rgba(0,165,145,0.3);
+    background: rgba(0, 165, 145, 0.3);
     border-radius: 50%;
     color: inherit;
     font: inherit;
@@ -1643,7 +1643,7 @@ form.main-search-box button {
     background: #1abba3;
 }
 .cphone a {
-    background: #D04551;
+    background: #d04551;
     border-radius: 5px 0 0 5px;
     display: inline-block;
     color: #fff !important;
@@ -1660,11 +1660,10 @@ form.main-search-box button {
     height: 100%;
     content: "";
     width: 50px;
-    border-top: 26px solid #D04551;
-    border-bottom: 28px solid #D04551;
+    border-top: 26px solid #d04551;
+    border-bottom: 28px solid #d04551;
     border-right: 29px solid transparent;
-    border-left: 29px solid #D04551;
-
+    border-left: 29px solid #d04551;
 }
 .dprice h5 {
     padding: 8px 0;
@@ -1690,10 +1689,11 @@ form.main-search-box button {
     display: block;
     padding: 5px 2px;
 }
-.contact-topublisher form input,.contact-topublisher form input:focus {
+.contact-topublisher form input,
+.contact-topublisher form input:focus {
     border: 1px solid #ddd;
 }
-.contact-topublisher form{
+.contact-topublisher form {
     margin-top: 15px;
 }
 .contact-topublisher textarea {
@@ -1701,7 +1701,7 @@ form.main-search-box button {
     border: 1px solid #ddd;
 }
 .contact-topublisher button {
-    background: #D66B0D;
+    background: #d66b0d;
     color: #fff;
     text-transform: capitalize;
     margin-top: 10px;
@@ -1723,8 +1723,9 @@ form.main-search-box button {
     right: 10px;
     top: -60px;
 }
-.common-snav .owl-nav .owl-prev, .common-snav .owl-nav .owl-next {
-    background: #D66B0D !important;
+.common-snav .owl-nav .owl-prev,
+.common-snav .owl-nav .owl-next {
+    background: #d66b0d !important;
     width: 40px;
     height: 35px;
     color: #fff !important;
@@ -1735,11 +1736,12 @@ form.main-search-box button {
 .common-snav .owl-nav i {
     font-size: 22px;
 }
-.common-snav .owl-nav .owl-prev:hover ,.common-snav .owl-nav .owl-next:hover{
-    background: #CB3F52 !important;
+.common-snav .owl-nav .owl-prev:hover,
+.common-snav .owl-nav .owl-next:hover {
+    background: #cb3f52 !important;
 }
 .usefull-info h5 {
-    background: #D66B0D;
+    background: #d66b0d;
     color: #fff;
     padding: 10px 18px;
 }
@@ -1761,7 +1763,7 @@ form.main-search-box button {
     border-bottom: 0;
 }
 .customer-phone li i {
-    color: #D66B0D;
+    color: #d66b0d;
     font-size: 20px;
     margin-right: 10px;
 }
@@ -1787,7 +1789,8 @@ form.main-search-box button {
     line-height: 20px;
     height: 38px;
 }
-.cbmain-content form .list,.cbmain-content form .list .option {
+.cbmain-content form .list,
+.cbmain-content form .list .option {
     display: block !important;
     width: 100% !important;
 }
@@ -1805,8 +1808,8 @@ form.main-search-box button {
     padding: 15px;
     border-radius: 5px;
 }
-.box-bg-1{
- background: #0500ae;
+.box-bg-1 {
+    background: #0500ae;
 }
 .box-bg-3 {
     background: #d92d2d;
@@ -1824,18 +1827,19 @@ form.main-search-box button {
 .box-inner i {
     font-size: 25px;
 }
-.ifverifybutton, .ifverifybutton:hover {
+.ifverifybutton,
+.ifverifybutton:hover {
     background: #295498;
     padding: 5px 13px;
     color: #fff;
     margin-left: 8px;
 }
-.customer-sidebar{
-    background:#fff;
-    border:1px solid #ddd;
+.customer-sidebar {
+    background: #fff;
+    border: 1px solid #ddd;
 }
 .customer-bg {
-    background: #F6F7FB;
+    background: #f6f7fb;
 }
 .customer-info .title {
     font-size: 18px;
@@ -1844,13 +1848,12 @@ form.main-search-box button {
     font-weight: 600;
     color: #555;
     border-bottom: 1px solid #ddd;
-
 }
 .customer-info .image {
     width: 90px;
     margin: 0 auto;
     padding-top: 20px;
-    height:90px;
+    height: 90px;
 }
 .customer-info .name {
     padding: 0 20px;
@@ -1870,16 +1873,16 @@ form.main-search-box button {
 .customer-menu ul li a {
     display: block;
     padding: 10px 20px;
-    color:#555;
+    color: #555;
 }
-.customer-menu ul li.active a{
-    background:#F9FAFF;
-    color:#D66B0D;
-    border-right: 2px solid #D66B0D;
+.customer-menu ul li.active a {
+    background: #f9faff;
+    color: #d66b0d;
+    border-right: 2px solid #d66b0d;
 }
 
-.customer-menu ul li.active a i{
-    color:#D66B0D;
+.customer-menu ul li.active a i {
+    color: #d66b0d;
 }
 
 .customer-menu ul li a i {
@@ -1900,19 +1903,22 @@ form.main-search-box button {
     font-weight: 600;
     color: #555;
 }
-.customer-menu ul li a:hover,.customer-menu ul li a:hover i{
-    color: #D66B0D;
+.customer-menu ul li a:hover,
+.customer-menu ul li a:hover i {
+    color: #d66b0d;
 }
 .cbmain-content {
     padding: 30px;
 }
-.customer-edit-profile input,.customer-edit-profile input:focus {
+.customer-edit-profile input,
+.customer-edit-profile input:focus {
     border-color: #ddd;
     height: 40px;
     border-radius: 5px;
     outline: 0;
 }
-.customer-edit-profile textarea,.customer-edit-profile textarea:focus {
+.customer-edit-profile textarea,
+.customer-edit-profile textarea:focus {
     border-color: #ddd;
     border-radius: 5px;
     outline: 0;
@@ -1926,15 +1932,16 @@ form.main-search-box button {
     height: 38px !important;
     line-height: 40px !important;
 }
-.customer-edit-profile .select2-selection--single{
+.customer-edit-profile .select2-selection--single {
     border: 1px solid #ddd;
     height: 38px !important;
 }
 .custom-file-label {
     margin-top: 31px;
 }
-.cbutton, .cbutton:focus {
-    background: #D66B0D;
+.cbutton,
+.cbutton:focus {
+    background: #d66b0d;
     color: #fff;
     padding: 13px 30px;
     text-transform: capitalize;
@@ -1944,8 +1951,8 @@ form.main-search-box button {
     font-size: 16px;
     font-weight: 600;
 }
-.cbutton:hover{
-    background: #CB3F52;
+.cbutton:hover {
+    background: #cb3f52;
 }
 .smallImage {
     width: 50px;
@@ -1958,7 +1965,7 @@ form.main-search-box button {
     border-radius: 50px;
 }
 .ads-table .ads-new a {
-    background: #D66B0D;
+    background: #d66b0d;
     color: #fff;
     padding: 6px 9px;
     margin-bottom: 26px;
@@ -1967,28 +1974,31 @@ form.main-search-box button {
     font-weight: 600;
 }
 
-.cbmain-content input ,.cbmain-content select,.cbmain-content textarea {
+.cbmain-content input,
+.cbmain-content select,
+.cbmain-content textarea {
     margin-bottom: 30px;
     color: #222;
 }
-.cbmain-content form .btn-success:focus{
+.cbmain-content form .btn-success:focus {
     background: #218838;
 }
 .edit-btn a {
-    background: #D66B0D;
+    background: #d66b0d;
     color: #fff;
     padding: 5px 8px;
     border-radius: 5px;
     font-size: 12px;
 }
 .delete-btn a {
-    background: #D04551;
+    background: #d04551;
     color: #fff;
     padding: 5px 8px;
     border-radius: 5px;
     font-size: 12px;
 }
-.cbmain-content textarea,.cbmain-content textarea:focus{
+.cbmain-content textarea,
+.cbmain-content textarea:focus {
     border: 1px solid #ddd;
 }
 .smallimage {
@@ -1999,7 +2009,7 @@ form.main-search-box button {
 .action_btn {
     width: 150px;
 }
-.editimage{
+.editimage {
     width: 150px;
 }
 .editimage {
@@ -2008,7 +2018,9 @@ form.main-search-box button {
     margin-right: 10px;
     margin-top: 20px;
 }
-.cbmain-content form input ,.cbmain-content form input:focus,.cbmain-content form select:focus {
+.cbmain-content form input,
+.cbmain-content form input:focus,
+.cbmain-content form select:focus {
     border: 1px solid #ddd;
 }
 .cbmain-content form select {
@@ -2023,24 +2035,25 @@ form.main-search-box button {
     background: #fff;
     padding: 30px;
 }
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 .contact-form button {
-    background: #AF2D2D;
+    background: #af2d2d;
     color: #fff;
     padding: 12px 22px;
     border-radius: 5px;
 }
 
 .premium {
-	position: absolute;
-	right: 17px;
-	top: 0;
-	background: #AF2D2D;
-	color: #fff;
-	padding: 2px 5px;
+    position: absolute;
+    right: 17px;
+    top: 0;
+    background: #af2d2d;
+    color: #fff;
+    padding: 2px 5px;
 }
 .reportsubbtn:focus {
     background: #007bff;
@@ -2057,16 +2070,19 @@ form.main-search-box button {
 }
 
 .log-btn {
-	text-align: center;
-	padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 .log-btn a {
-	background: #004443;
-	border: none;
+    background: #004443;
+    border: none;
 }
 .log-btn a:focus {
-   background: #004443;
-   color:#fff;
+    background: #004443;
+    color: #fff;
+}
+.post-location {
+    width: 65%;
 }
 
 /*============ Design By Milon =============*/
@@ -2101,13 +2117,12 @@ form.main-search-box button {
 }
 .cat_price {
     font-size: 25px;
-    color:red !important;
+    color: red !important;
 }
 .cat_price {
     font-size: 25px;
-    color: #f56565!important;
+    color: #f56565 !important;
     font-weight: 600 !important;
     margin-top: 22px !important;
     display: inline-block;
 }
-

@@ -1,11 +1,6 @@
 @extends('frontEnd.layouts.master')
 @section('title','সকল বিজ্ঞাপন')
 @section('content')
-<style>
-	.display-block {
-	    display: block !important;
-	}
-</style>
 <div class="common_breadcrumb">
 	<div class="container">
 		<div class="row">
@@ -21,7 +16,6 @@
 		</div>
 	</div>
 </div>
-
  <div class="common_search_area">
  	<div class="container">
  		<div class="row">
@@ -62,48 +56,48 @@
 								      	   <div class="row">
 									      	   	<div class="col-sm-6">
 									      	   		<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-									      		 @foreach($divisions as $key=>$division)
-												  <a class="nav-link" id="v-pills-home-tab{{$division->id}}" data-toggle="pill" href="#v-pills-home{{$division->id}}" role="tab" aria-controls="v-pills-home{{$division->id}}" aria-selected="true">
-												  	<span>{{$division->name}}</span> <i class="fa fa-angle-right"></i>
-												  </a>
-												  @endforeach
-												</div>
+											      		 @foreach($divisions as $key=>$division)
+														  <a class="nav-link" id="v-pills-home-tab{{$division->id}}" data-toggle="pill" href="#v-pills-home{{$division->id}}" role="tab" aria-controls="v-pills-home{{$division->id}}" aria-selected="true">
+														  	<span>{{$division->name}}</span> <i class="fa fa-angle-right"></i>
+														  </a>
+														  @endforeach
+														</div>
 									      	   	</div>
 									      	   	<div class="col-sm-6">
 									      	   		<div class="tab-content" id="v-pills-tabContent">
-											 @foreach($divisions as $key=>$division)
-											  <div class="tab-pane fade " id="v-pills-home{{$division->id}}" role="tabpanel" aria-labelledby="v-pills-home-tab{{$division->id}}">
-											  	<p><strong>{{$division->name}} -এর মধ্যে একটি স্থানীয় এলাকা নির্বাচন করুন</strong></p>
-											  	<a href="" class="all-area">{{$division->name}}-এর সবগুলো</a>
-											  	<ul class="modal-second-menu">
-											  		@foreach($division->districts as $key=>$district)
-											  		<li>
-													  <a data-toggle="collapse" href="#modal-collapse{{$district->id}}" role="button" aria-expanded="false" aria-controls="modal-collapse">
-													    {{$district->dist_name}} <i class="fa fa-angle-down"></i>
-													  </a>
-													  <div class="collapse-area">
-														<div class="collapse " id="modal-collapse{{$district->id}}">
-															<div class="tree-menu demo custom-tree" id="tree-menu">
-														  <ul>
-														  	@foreach($district->thanas as $thana)
-														  	<li><a href="{{url('location/'.$division->slug.'/'.$district->slug.'/'.$thana->slug)}}">{{$thana->thana_name}}</a>
-											  				<ul>
-											  					@foreach($thana->unions as $union)
-												  				<li><a href="{{url('location/'.$division->slug.'/'.$district->slug.'/'.$thana->slug.'/'.$union->slug)}}">{{$union->union_name }}</a></li>
-												  				@endforeach
-											  				</ul>
-														  	</li>
-														  	@endforeach
-														  </ul>
-														  </div>
-														</div>
-													  </div>
-													</li>
-											  		@endforeach
-											  	</ul>
-											  </div>
-											  @endforeach
-											</div>
+																 @foreach($divisions as $key=>$division)
+																  <div class="tab-pane fade " id="v-pills-home{{$division->id}}" role="tabpanel" aria-labelledby="v-pills-home-tab{{$division->id}}">
+																  	<p><strong>{{$division->name}} -এর মধ্যে একটি স্থানীয় এলাকা নির্বাচন করুন</strong></p>
+																  	<a href="" class="all-area">{{$division->name}}-এর সবগুলো</a>
+																  	<ul class="modal-second-menu">
+																  		@foreach($division->districts as $key=>$district)
+																  		<li>
+																		  <a data-toggle="collapse" href="#modal-collapse{{$district->id}}" role="button" aria-expanded="false" aria-controls="modal-collapse">
+																		    {{$district->dist_name}} <i class="fa fa-angle-down"></i>
+																		  </a>
+																		  <div class="collapse-area">
+																			<div class="collapse " id="modal-collapse{{$district->id}}">
+																				<div class="tree-menu demo custom-tree" id="tree-menu">
+																			  <ul>
+																			  	@foreach($district->thanas as $thana)
+																			  	<li><a href="{{url('location/'.$division->slug.'/'.$district->slug.'/'.$thana->slug)}}">{{$thana->thana_name}}</a>
+																  				<ul>
+																  					@foreach($thana->unions as $union)
+																	  				<li><a href="{{url('location/'.$division->slug.'/'.$district->slug.'/'.$thana->slug.'/'.$union->slug)}}">{{$union->union_name }}</a></li>
+																	  				@endforeach
+																  				</ul>
+																			  	</li>
+																			  	@endforeach
+																			  </ul>
+																			  </div>
+																			</div>
+																		  </div>
+																		</li>
+																  		@endforeach
+																  	</ul>
+																  </div>
+																  @endforeach
+																</div>
 									      	   	</div>
 								      	   </div>
 								      </div>
@@ -130,31 +124,31 @@
 								      	   <div class="row">
 									      	   	<div class="col-sm-6">
 									      	   		<div class="nav flex-column nav-pills category-mmenu" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-									      		 @foreach($categories as $key=>$category)
-												  <a class="nav-link" id="v-pills-category-tab{{$category->id}}" data-toggle="pill" href="#v-pills-category{{$category->id}}" role="tab" aria-controls="v-pills-category{{$category->id}}" aria-selected="true">
-												  	<span>{{$category->name}}</span> <i class="fa fa-angle-right"></i>
-												  </a>
-												  @endforeach
-												</div>
+									      		 	@foreach($categories as $key=>$category)
+															  <a class="nav-link" id="v-pills-category-tab{{$category->id}}" data-toggle="pill" href="#v-pills-category{{$category->id}}" role="tab" aria-controls="v-pills-category{{$category->id}}" aria-selected="true">
+															  	<span>{{$category->name}}</span> <i class="fa fa-angle-right"></i>
+															  </a>
+															  @endforeach
+															</div>
 									      	   	</div>
 									      	   	<div class="col-sm-6">
 									      	   		<div class="tab-content" id="v-pills-tabContent">
-											 @foreach($categories as $key=>$category)
-											  <div class="tab-pane fade " id="v-pills-category{{$category->id}}" role="tabpanel" aria-labelledby="v-pills-category-tab{{$category->id}}">
-											  	<p><strong>{{$category->name}} -এর উপ-শ্রেণী নির্বাচন করুন</strong></p>
-											  	<a href="{{url('category/'.$category->slug)}}" class="all-area">{{$category->name}}-এর সবগুলো</a>
-											  	<ul class="modal-second-menu">
-											  		@foreach($category->subcategories as $key=>$subcategory)
-											  		<li>
-													  <a href="{{url('category/'.$category->slug.'/'.$subcategory->slug)}}">
-													    {{$subcategory->subcategoryName}} <i class="fa fa-angle-down"></i>
-													  </a>
-													</li>
-											  		@endforeach
-											  	</ul>
-											  </div>
-											  @endforeach
-											</div>
+																	 @foreach($categories as $key=>$category)
+																	  <div class="tab-pane fade " id="v-pills-category{{$category->id}}" role="tabpanel" aria-labelledby="v-pills-category-tab{{$category->id}}">
+																	  	<p><strong>{{$category->name}} -এর উপ-শ্রেণী নির্বাচন করুন</strong></p>
+																	  	<a href="{{url('category/'.$category->slug)}}" class="all-area">{{$category->name}}-এর সবগুলো</a>
+																	  	<ul class="modal-second-menu">
+																	  		@foreach($category->subcategories as $key=>$subcategory)
+																	  		<li>
+																			  <a href="{{url('category/'.$category->slug.'/'.$subcategory->slug)}}">
+																			    {{$subcategory->subcategoryName}} <i class="fa fa-angle-down"></i>
+																			  </a>
+																			</li>
+																	  		@endforeach
+																	  	</ul>
+																	  </div>
+																	  @endforeach
+																	</div>
 									      	   	</div>
 								      	   </div>
 								      </div>
@@ -169,16 +163,48 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12">
 				<div class="sidebar">
-					<div class="ads-type">
-						<p>সদস্যের ধরণ</p>
+						<div class="ads-type">
+						<p>Sort by</p>
 						<form action="">
 							<div class="form-control">
-								 <input type="radio" name="filter" value="1"  onchange="this.form.submit()" id="urgent" @if($filter==1)checked=""@endif>
-								 <label for="urgent">নন মেম্বারশিপ</label> 
+								 <input type="radio" name="sort" value=""  onchange="this.form.submit()" id="sortall" @if($sort == null) checked @endif>
+								 <label for="sortall">All</label> 
 							</div>
 							<div class="form-control">
-								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
-								<label for="dorstep">মেম্বারশিপ</label> 
+								<input type="radio" id="newest" name="sort" value="1"  onchange="this.form.submit()" @if($sort==1) checked="checked" @endif>
+								<label for="newest">Newest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="oldest" name="sort" value="2"  onchange="this.form.submit()" @if($sort==2) checked @endif>
+								<label for="oldest">Oldest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="logtohigh" name="sort" value="3"  onchange="this.form.submit()" @if($sort==3) checked @endif>
+								<label for="logtohigh">Price : Low > High</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="hightolow" name="sort" value="4"  onchange="this.form.submit()" @if($sort==4) checked @endif>
+								<label for="hightolow">Price : High > Low</label> 
+							</div>
+
+						</form>
+					</div>
+
+					<div class="ads-type">
+						<p>Condition</p>
+						<form action="">
+							<div class="form-control">
+								 <input type="radio" name="filter" value=""  onchange="this.form.submit()" id="filterall" @if($filter == null)checked=""@endif>
+								 <label for="filterall">All</label> 
+							</div>
+
+							<div class="form-control">
+								<input type="radio" id="used" name="filter" value="1"  onchange="this.form.submit()" @if($filter==1) checked @endif>
+								<label for="used">Used</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="new" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2) checked= @endif>
+								<label for="new">New</label> 
 							</div>
 						</form>
 					</div>
@@ -188,10 +214,7 @@
 						</div>
 				         <ul>
 				            @foreach($categories as $key=>$value)
-				             @php 
-				            	$totalcat = App\Advertisment::where(['category_id'=>$value->id,'status'=>1])->get(); 
-				            @endphp 
-				        	<li><a href="{{url('category/'.$value->slug)}}">{{$value->name}} ({{$totalcat->count()}})</a></li>
+				        	<li><a href="{{url('category/'.$value->slug)}}">{{$value->name}} ({{$value->ads->count()}})</a></li>
 				        	@endforeach
 				   		 </ul>
 					</div>
@@ -202,7 +225,7 @@
 						<div id="location-ads" class="location-ads ">
 							<ul>
 							@foreach($divisions as $division)
-							<li><a href="{{url('/location/'.$division->slug)}}">{{$division->name}} <span> @php $totaldiviads = App\Advertisment::where('division_id',$division->id)->get(); @endphp ({{$totaldiviads->count()}})</span></a></li>
+							<li><a href="{{url('/location/'.$division->slug)}}">{{$division->name}} <span> ({{$division->ads->count()}})</span></a></li>
 							@endforeach
 						</ul>
 							
@@ -227,36 +250,31 @@
 				  		<div class="row">
 				  			<div class="col-sm-12">
 				  				@foreach($advertisments as $key=>$value)
-				  				<div class="list-product @if($key==0) big-ads @endif">
+				  				<div class="list-product">
 					  				<a href="">
 					  					<div class="row">
-									  		<div class="col-lg-3 col-md-3 col-sm-3 col-3">
+									  		<div class="col-lg-3 col-md-3 col-sm-3 col-12">
 									  			<div class="list-ad-image">
 									  				<a href="{{url('details/'.$value->id.'/'.$value->slug)}}">
-									  					@foreach($adsimage as $image)
-							                             @if($value->id==$image->ads_id)
-							                             <img src="{{asset($image->image)}}" alt="">
-							                              @break
-							                              @endif
-							                         	 @endforeach
+									  				<img src="{{asset($value->image->image)}}" alt="">
 									  				</a>
 									  			</div>
 									  		</div>
-									  		<div class="col-lg-9 col-md-9 col-sm-9 col-9">
+									  		<div class="col-lg-9 col-md-9 col-sm-9 col-12">
 									  			<div class="list-ad-info">
 									  				<h5><a href="{{url('details/'.$value->id.'/'.$value->slug)}}">{{substr($value->title,0,50)}}</a></h5>
 									  				
 									  				<div class="common_area">
-									  				<p style="width: 65%"><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
-									  				@endif
-									  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
-									  				@endif</p>
-									  				
-									  				<div class="datetime_area">
-									  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
-
-									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
-									  				</div>
+									  					<div class="post-location">
+									  						<p><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
+											  				@endif
+											  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
+											  				@endif</p>
+									  					</div>
+										  				<div class="datetime_area">
+										  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
+										  					<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
+										  				</div>
 									  			    </div>
 									  			    <div class="cat_des">
 									  			    	{!!$value->description!!}
@@ -271,7 +289,7 @@
 					  				</a>
 				  				</div>
 						  		<!-- list product end -->
-						  	@endforeach
+						  	  @endforeach
 				  		</div>
 				  	</div>
 				  	</div>

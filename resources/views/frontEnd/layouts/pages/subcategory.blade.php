@@ -1,12 +1,6 @@
 @extends('frontEnd.layouts.master')
 @section('title',$breadcrumb->subcategoryName)
 @section('content')
-<style>
-	.display-block {
-	    display: block !important;
-	}
-</style>
-
 <div class="common_breadcrumb">
 	<div class="container">
 		<div class="row">
@@ -170,15 +164,47 @@
 			<div class="col-lg-3 col-md-3 col-sm-12">
 				<div class="sidebar">
 					<div class="ads-type">
-						<p>সদস্যের ধরণ</p>
+						<p>Sort by</p>
 						<form action="">
 							<div class="form-control">
-								 <input type="radio" name="filter" value="1"  onchange="this.form.submit()" id="urgent" @if($filter==1)checked=""@endif>
-								 <label for="urgent">নন মেম্বারশিপ</label> 
+								 <input type="radio" name="sort" value=""  onchange="this.form.submit()" id="sortall" @if($sort == null) checked @endif>
+								 <label for="sortall">All</label> 
 							</div>
 							<div class="form-control">
-								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
-								<label for="dorstep">মেম্বারশিপ</label> 
+								<input type="radio" id="newest" name="sort" value="1"  onchange="this.form.submit()" @if($sort==1) checked="checked" @endif>
+								<label for="newest">Newest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="oldest" name="sort" value="2"  onchange="this.form.submit()" @if($sort==2) checked @endif>
+								<label for="oldest">Oldest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="logtohigh" name="sort" value="3"  onchange="this.form.submit()" @if($sort==3) checked @endif>
+								<label for="logtohigh">Price : Low > High</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="hightolow" name="sort" value="4"  onchange="this.form.submit()" @if($sort==4) checked @endif>
+								<label for="hightolow">Price : High > Low</label> 
+							</div>
+
+						</form>
+					</div>
+
+					<div class="ads-type">
+						<p>Condition</p>
+						<form action="">
+							<div class="form-control">
+								 <input type="radio" name="filter" value=""  onchange="this.form.submit()" id="filterall" @if($filter == null)checked=""@endif>
+								 <label for="filterall">All</label> 
+							</div>
+
+							<div class="form-control">
+								<input type="radio" id="used" name="filter" value="1"  onchange="this.form.submit()" @if($filter==1) checked @endif>
+								<label for="used">Used</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="new" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2) checked= @endif>
+								<label for="new">New</label> 
 							</div>
 						</form>
 					</div>
@@ -229,36 +255,31 @@
 				  		<div class="row">
 				  			<div class="col-sm-12">
 				  				@foreach($advertisments as $key=>$value)
-				  				<div class="list-product @if($key==0) big-ads @endif">
+				  				<div class="list-product">
 					  				<a href="">
 					  					<div class="row">
-									  		<div class="col-lg-3 col-md-3 col-sm-3 col-3">
+									  		<div class="col-lg-3 col-md-3 col-sm-3 col-12">
 									  			<div class="list-ad-image">
 									  				<a href="{{url('details/'.$value->id.'/'.$value->slug)}}">
-									  					@foreach($adsimage as $image)
-							                             @if($value->id==$image->ads_id)
-							                             <img src="{{asset($image->image)}}" alt="">
-							                              @break
-							                              @endif
-							                         	 @endforeach
+									  				<img src="{{asset($value->image->image)}}" alt="">
 									  				</a>
 									  			</div>
 									  		</div>
-									  		<div class="col-lg-9 col-md-9 col-sm-9 col-9">
+									  		<div class="col-lg-9 col-md-9 col-sm-9 col-12">
 									  			<div class="list-ad-info">
 									  				<h5><a href="{{url('details/'.$value->id.'/'.$value->slug)}}">{{substr($value->title,0,50)}}</a></h5>
 									  				
 									  				<div class="common_area">
-									  				<p style="width: 65%"><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
-									  				@endif
-									  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
-									  				@endif</p>
-									  				
-									  				<div class="datetime_area">
-									  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
-
-									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
-									  				</div>
+									  					<div class="post-location">
+									  						<p><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
+											  				@endif
+											  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
+											  				@endif</p>
+									  					</div>
+										  				<div class="datetime_area">
+										  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
+										  					<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
+										  				</div>
 									  			    </div>
 									  			    <div class="cat_des">
 									  			    	{!!$value->description!!}
@@ -273,7 +294,7 @@
 					  				</a>
 				  				</div>
 						  		<!-- list product end -->
-						  	@endforeach
+						  	  @endforeach
 				  		</div>
 				  	</div>
 				  	</div>

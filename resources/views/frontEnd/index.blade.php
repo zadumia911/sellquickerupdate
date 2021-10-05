@@ -9,7 +9,7 @@
  					<h5>The largest marketplace in Bangladesh!</h5>
  					<p>Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more in Bangladesh!</p>
  				</div>
- 				<form  action="{{url('home-search')}}" method="get" class="main-search-box">
+ 				<form  action="{{url('home-search')}}" method="GET" class="main-search-box">
 				@csrf
 					<input type="text" name="keyword" placeholder="Search keyword" class="search-keyword" required="">
 					<button>search</button>
@@ -53,7 +53,7 @@
 	 							<ul>
 	 								<li class="highlight"><a href="{{url('category/'.$value->slug)}}">{{$value->name}}</a></li>
 	 								@foreach($value->hsubcategories as $subcategory)
-	 								<li><a href="">{{$subcategory->subcategoryName}}</a></li>
+	 								<li><a href="{{url('category/'.$value->slug.'/'.$subcategory->slug)}}">{{$subcategory->subcategoryName}}</a></li>
 	 								@endforeach
 	 							</ul>
 	 						</div>
