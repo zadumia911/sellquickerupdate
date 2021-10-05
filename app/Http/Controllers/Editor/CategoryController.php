@@ -48,6 +48,7 @@ class CategoryController extends Controller
             'name'=>'required',
             'status'=>'required',
         ]);
+    	$update_data =  Category::find($request->hidden_id);
 
         $update_image = $request->file('image');
         if ($update_image) {
@@ -60,10 +61,9 @@ class CategoryController extends Controller
         }else{
             $fileUrl = $update_data->image;
         }
-    	$update_data = Category::find($request->hidden_id);
 		$update_data->name     		 = 	$request->name;
         $update_data->slug           =  preg_replace('/\s+/u', '-', trim($request->name));
-        $update_data->image           =  $fileUrl;
+        $update_data->image          =  $fileUrl;
     	$update_data->status  	  	 = 	$request->status;
     	$update_data->save();
         Toastr::success('message', 'Category Update successfully!');
