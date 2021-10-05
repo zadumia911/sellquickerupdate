@@ -52,50 +52,29 @@ class FrontEndController extends Controller
      public function category($slug,Request $request){
 
         $breadcrumb=Category::where('slug',$slug)->first();
-        $subcategories=Subcategory::where('category_id',$breadcrumb->id)->get();
+        $subcategories=Subcategory::where('category_id',$breadcrumb->id)->with('ads')->get();
         if($breadcrumb){
         $currentdata=Carbon::now()->format('Y-m-d');
+
         if($request->filter){
             if($request->filter==1){
-            $advertisments= DB::table('advertisments')
-                ->join('categories','advertisments.category_id','=','categories.id')
-                ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-                ->join('divisions','advertisments.division_id','=','divisions.id')
-                ->join('districts','advertisments.dist_id','=','districts.id')
-                ->join('customers','advertisments.customer_id','=','customers.id')
-                ->where(['advertisments.status'=>1,'advertisments.request'=>1,'advertisments.category_id'=>$breadcrumb->id])
-                ->where('customers.membership',1)
-                 ->where('advertisments.adsduration','>=',$currentdata)
-                ->orderBy('advertisments.id','DESC')
-                ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+                ->where('membership',1)
+                 ->where('adsduration','>=',$currentdata)
+                ->orderBy('id','DESC')
                 ->paginate(25);
             }else{
-                $advertisments= DB::table('advertisments')
-                ->join('categories','advertisments.category_id','=','categories.id')
-                ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-                ->join('divisions','advertisments.division_id','=','divisions.id')
-                ->join('districts','advertisments.dist_id','=','districts.id')
-                ->join('customers','advertisments.customer_id','=','customers.id')
-               ->where(['advertisments.status'=>1,'advertisments.request'=>1,'advertisments.category_id'=>$breadcrumb->id])
-               ->where('customers.membership',2)
-                 ->where('advertisments.adsduration','>=',$currentdata)
-                ->orderBy('advertisments.id','DESC')
-                ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+                $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+                 ->where('membership',2)
+                 ->where('adsduration','>=',$currentdata)
+                ->orderBy('id','DESC')
                 ->paginate(25);
             }
         }else{
-            $advertisments= DB::table('advertisments')
-            ->join('categories','advertisments.category_id','=','categories.id')
-            ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-            ->join('divisions','advertisments.division_id','=','divisions.id')
-            ->join('districts','advertisments.dist_id','=','districts.id')
-            ->join('customers','advertisments.customer_id','=','customers.id')
-            ->where(['advertisments.status'=>1,'advertisments.request'=>1,'advertisments.category_id'=>$breadcrumb->id])
-             ->where('advertisments.adsduration','>=',$currentdata)
-            ->orderBy('advertisments.id','DESC')
-            ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+            ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','DESC')
             ->paginate(25);
-            // advertisment
         }
         $sort = $request->sort;
         $filter = $request->filter;
