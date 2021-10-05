@@ -14,30 +14,29 @@
 Auth::routes();
 
 Route::group(['namespace'=>'FrontEnd'], function(){
-	 Route::get('/', 'FrontEndController@index');
-	 Route::get('/category/{slug}/', 'FrontEndController@category');
-     Route::get('/category/{catslug}/{subslug}', 'FrontEndController@subcategory');
-     Route::get('home-search/', 'FrontEndController@homesearch');
-     Route::get('/all-ads', 'FrontEndController@allads');
-	 Route::get('/ads/{slug}/{id}', 'FrontEndController@subcategory');
-	 Route::get('/details/{id}/{slug}', 'FrontEndController@details');
-	 Route::get('/search-category','FrontEndController@searchcategory');
-	 Route::post('/search/products','FrontEndController@searchproduct');
-	 Route::get('/location/{slug}','FrontEndController@locationads');
-     Route::get('/location/{division}/{district}/{thana}','FrontEndController@thana_ads');
-     Route::get('/location/{division}/{district}/{thana}/{union}','FrontEndController@union_ads');
-	 Route::get('/allcategory', 'FrontEndController@allcategory');
-	 Route::get('/page/{slug}', 'FrontEndController@footerpage');
-	 Route::get('/search-district','FrontEndController@searchdistrict');
-     Route::get('/search-thana','FrontEndController@searchthana');
-     Route::get('/search-union','FrontEndController@searchunion');
-	 Route::get('/how-to-quick-sell','FrontEndController@quicksell');
-     Route::get('/contact-us','FrontEndController@contact');
-     Route::get('/support','FrontEndController@support');
-    
-
-
+   Route::get('/', 'FrontEndController@index');
+   Route::get('/category/{slug}/', 'FrontEndController@category');
+   Route::get('/category/{catslug}/{subslug}', 'FrontEndController@subcategory');
+   Route::get('home-search/', 'FrontEndController@homesearch');
+   Route::get('/all-ads', 'FrontEndController@allads');
+   Route::get('/ads/{slug}/{id}', 'FrontEndController@subcategory');
+   Route::get('/details/{id}/{slug}', 'FrontEndController@details');
+   Route::get('/search-category','FrontEndController@searchcategory');
+   Route::post('/search/products','FrontEndController@searchproduct');
+   Route::get('/location/{slug}','FrontEndController@locationads');
+   Route::get('/location/{division}/{district}/{thana}','FrontEndController@thana_ads');
+   Route::get('/location/{division}/{district}/{thana}/{union}','FrontEndController@union_ads');
+   Route::get('/allcategory', 'FrontEndController@allcategory');
+   Route::get('/page/{slug}', 'FrontEndController@footerpage');
+   Route::get('/search-district','FrontEndController@searchdistrict');
+   Route::get('/search-thana','FrontEndController@searchthana');
+   Route::get('/search-union','FrontEndController@searchunion');
+   Route::get('/how-to-quick-sell','FrontEndController@quicksell');
+   Route::get('/contact-us','FrontEndController@contact');
+   Route::get('/support','FrontEndController@support');
 });
+
+
  Route::post('message/visitor/to/publisher','EmailController@publisherEmail');
  Route::post('visitor/support/','EmailController@visitorsupport');
  Route::post('report/ad','EmailController@reportad');
