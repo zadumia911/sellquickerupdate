@@ -560,7 +560,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy;<a href="{{url('/')}}">Hatbodol</a></strong>
+    <strong>Copyright &copy;<a href="{{url('/')}}">Sellquicker</a></strong>
     All rights reserved.
   </footer>
 
