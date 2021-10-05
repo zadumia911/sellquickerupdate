@@ -1325,6 +1325,11 @@ form.main-search-box button {
 .view-details a:hover{
     border-radius:  5px;
 }
+.main-content {
+    background: #fff;
+    padding: 30px;
+    margin-top: 30px;
+}
 .custom-tree {
     margin-bottom: 15px;
 }
@@ -1370,6 +1375,8 @@ form.main-search-box button {
 }
 .advertisment-left {
     background-color: #fff;
+    overflow: hidden;
+    padding-bottom: 20px;
 }
 .advertisment-right {
 }
@@ -2038,15 +2045,15 @@ form.main-search-box button {
 .reportsubbtn:focus {
     background: #007bff;
 }
-
 .report-btn button {
-	text-align: center;
-	display: inline-block;
-	background: #008a87;
-	float: right;
-	padding: 5px 10px;
-	color: #fff;
-	border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    background: #008a87;
+    float: right;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 13px;
 }
 
 .log-btn {

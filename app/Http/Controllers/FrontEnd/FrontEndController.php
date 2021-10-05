@@ -556,16 +556,8 @@ class FrontEndController extends Controller
     }
      public function details($id,$slug){
         $currentdata=Carbon::now()->format('Y-m-d');
-        $adsdetails= DB::table('advertisments')
-          ->join('categories','advertisments.category_id','=','categories.id')
-        ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-         ->join('divisions','advertisments.division_id','=','divisions.id')
-        ->join('districts','advertisments.dist_id','=','districts.id')
-        ->join('customers','advertisments.customer_id','=','customers.id')
-        ->where(['advertisments.status'=>1,'advertisments.request'=>1,'advertisments.id'=>$id])
-        ->where('advertisments.adsduration','>=',$currentdata)
-        ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as division_name','districts.dist_name','customers.name as customerName','customers.email as customerEmail','customers.phone as customerPhone','customers.membership')
-        ->orderBy('advertisments.id','DESC')
+        $adsdetails= Advertisment::where('adsduration','>=',$currentdata)
+        ->where('status',1)
         ->first();
         if($adsdetails){
         return view('frontEnd.layouts.pages.details',compact('adsdetails'));
