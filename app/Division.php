@@ -10,4 +10,7 @@ class Division extends Model
     public function districts(){
     	return $this->hasMany('App\District')->where('status',1);
     }
+    public function ads(){
+      return $this->hasMany('App\Advertisment','division_id');
+   }
 }
