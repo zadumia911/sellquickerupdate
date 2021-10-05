@@ -53,7 +53,7 @@
 	 							<ul>
 	 								<li class="highlight"><a href="{{url('category/'.$value->slug)}}">{{$value->name}}</a></li>
 	 								@foreach($value->hsubcategories as $subcategory)
-	 								<li><a href="">{{$subcategory->subcategoryName}}</a></li>
+	 								<li><a href="{{url('category/'.$value->slug.'/'.$subcategory->slug)}}">{{$subcategory->subcategoryName}}</a></li>
 	 								@endforeach
 	 							</ul>
 	 						</div>

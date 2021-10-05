@@ -214,26 +214,47 @@ class FrontEndController extends Controller
         $subcategories=Subcategory::where('category_id',$categoryname->id)->get();
         if($breadcrumb){
         $currentdata=Carbon::now()->format('Y-m-d');
-        if($request->filter){
-            if($request->filter==1){
+       if($request->filter==1){
             $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
-                ->where('membership',1)
-                 ->where('adsduration','>=',$currentdata)
-                ->orderBy('id','DESC')
-                ->paginate(25);
-            }else{
-                $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
-                ->where('membership',2)
+                ->where('version',1)
                 ->where('adsduration','>=',$currentdata)
                 ->orderBy('id','DESC')
                 ->paginate(25);
-            }
-        }else{
+            }elseif($request->filter==2){
+                $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
+                ->where('version',2)
+                 ->where('adsduration','>=',$currentdata)
+                ->paginate(25);
+            }elseif($request->sort==1){
             $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
              ->where('adsduration','>=',$currentdata)
             ->orderBy('id','DESC')
             ->paginate(25);
-            // advertisment
+         }elseif($request->sort==2){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','ASC')
+            ->paginate(25);
+         }elseif($request->sort==3){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('price','ASC')
+            ->paginate(25);
+         }elseif($request->sort==4){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('price','DESC')
+            ->paginate(25);
+         }elseif($request->sort==4){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('price','DESC')
+            ->paginate(25);
+         }else{
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'subcategory_id'=>$breadcrumb->id])
+            ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','DESC')
+            ->paginate(25);
         }
         $sort = $request->sort;
         $filter = $request->filter;
@@ -253,7 +274,7 @@ class FrontEndController extends Controller
             if($request->filter==1){
             $advertisments= Advertisment::where('status',1)
                 ->where('request',1)
-                 ->where('membership',1)
+                ->where('membership',1)
                 ->where('division_id',$find_division->id)
                  ->where('adsduration','>=',$currentdata)
                 ->orderBy('id','DESC')

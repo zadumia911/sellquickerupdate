@@ -1,12 +1,6 @@
 @extends('frontEnd.layouts.master')
 @section('title',$breadcrumb->subcategoryName)
 @section('content')
-<style>
-	.display-block {
-	    display: block !important;
-	}
-</style>
-
 <div class="common_breadcrumb">
 	<div class="container">
 		<div class="row">
@@ -170,15 +164,47 @@
 			<div class="col-lg-3 col-md-3 col-sm-12">
 				<div class="sidebar">
 					<div class="ads-type">
-						<p>সদস্যের ধরণ</p>
+						<p>Sort by</p>
 						<form action="">
 							<div class="form-control">
-								 <input type="radio" name="filter" value="1"  onchange="this.form.submit()" id="urgent" @if($filter==1)checked=""@endif>
-								 <label for="urgent">নন মেম্বারশিপ</label> 
+								 <input type="radio" name="sort" value=""  onchange="this.form.submit()" id="sortall" @if($sort == null) checked @endif>
+								 <label for="sortall">All</label> 
 							</div>
 							<div class="form-control">
-								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
-								<label for="dorstep">মেম্বারশিপ</label> 
+								<input type="radio" id="newest" name="sort" value="1"  onchange="this.form.submit()" @if($sort==1) checked="checked" @endif>
+								<label for="newest">Newest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="oldest" name="sort" value="2"  onchange="this.form.submit()" @if($sort==2) checked @endif>
+								<label for="oldest">Oldest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="logtohigh" name="sort" value="3"  onchange="this.form.submit()" @if($sort==3) checked @endif>
+								<label for="logtohigh">Price : Low > High</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="hightolow" name="sort" value="4"  onchange="this.form.submit()" @if($sort==4) checked @endif>
+								<label for="hightolow">Price : High > Low</label> 
+							</div>
+
+						</form>
+					</div>
+
+					<div class="ads-type">
+						<p>Condition</p>
+						<form action="">
+							<div class="form-control">
+								 <input type="radio" name="filter" value=""  onchange="this.form.submit()" id="filterall" @if($filter == null)checked=""@endif>
+								 <label for="filterall">All</label> 
+							</div>
+
+							<div class="form-control">
+								<input type="radio" id="used" name="filter" value="1"  onchange="this.form.submit()" @if($filter==1) checked @endif>
+								<label for="used">Used</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="new" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2) checked= @endif>
+								<label for="new">New</label> 
 							</div>
 						</form>
 					</div>
