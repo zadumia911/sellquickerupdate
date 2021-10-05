@@ -1,3 +1,178 @@
+<<<<<<< HEAD
+@media screen and (min-width:320px) and (max-width:767px) { 
+.header-top {
+    display: none;
+}
+.list-ad-image {
+    height: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+.datetime_area {
+    width: 100%;
+    display: block;
+}
+.post-location {
+    width: 100%;
+    display: block;
+}
+.common_area {
+    position: relative;
+    display: block;
+}
+.datetime_area p {
+    display: inline-block;
+    margin: 0;
+}
+.cat_des {
+    display: none;
+}
+.cat_price {
+    margin: 0 !important;
+}
+.desktop-banner{
+    display:none;
+}
+.mobile-banner{
+    display:block;
+}
+.desktop-logo{
+    display:none;
+}
+.mobile-logo{
+    display:block;
+}
+.live-chat {
+    float: right;
+    margin-top: -15px;
+    margin-right: 13px;
+    padding: 23px 0px 0px 0px;
+}
+.search-and-category {
+    background: #EEEEEE;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+.nav-icon {
+    right: 10px !important;
+    top: 22px !important;
+}
+.show-menu {
+    left: 0 !important;
+}
+.fmobile-hide{
+    display:none !important;
+}
+.header-top-left > ul{
+   display: none;
+}
+.postsection{
+    display:block !important;
+}
+.postsection a {
+	padding: 12px 0 !important;
+	font-weight: 600;
+}
+.home-page-modal h3 {
+	font-size: 22px;
+}
+.banner-content {
+    width: 350px;
+    padding-top: 50px;
+}
+.home-banner {
+	height: 160px;
+}
+.header-post-ads {
+    display:none;
+}
+.live-chat {
+	text-align: right;
+	display:block !important;
+}
+.main-search-box {
+    width: 80%;
+    margin: 30px auto;
+    border: 6px solid #ddd;
+    overflow: hidden;
+    border-radius: 10px;
+}
+form.main-search-box input {
+    width: 80%;
+}
+form.main-search-box button {
+    width: 20%;
+    height: 40px;
+}
+.category-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.single-category {
+    margin: 5px 5px;
+    width: 46%;
+}
+.allcategory-item {
+    height: auto;
+    min-height: 250px;
+}
+.adsdetails-head-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.adsdetails-price-right p {
+    text-align: initial;
+    color: #9e9e9e;
+}
+.advertisment-right {
+    margin-top: 30px;
+}
+.commondesign {
+    background: #E7EDEE;
+    padding: 65px 0 30px 0px;
+}
+.home-search {
+	padding: 10px 0;
+}
+.cat-search {
+    display: none;
+}
+.filter-and-search {
+    padding-bottom: 15px;
+}
+.sidebar {
+    border-right: 0px;
+    display: none;
+}
+.hsearch-box .nice-select {
+   margin-bottom: 10px
+}
+.search-keyword {
+    margin-top: 0px
+}
+.single-footer-content {
+    width: 100%;
+    margin-top: 6px;
+    float: none;
+}
+.single-footer-content ul li a {
+    text-align: center;
+}
+.copyright p {
+    text-align: center;
+}
+.postsection {
+	padding: 0px 0;
+	position: fixed;
+	width: 100%;
+	bottom: 5px;
+	z-index: 9;
+}
+.home-space {
+height: 55px;
+}
+=======
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .header-top {
         display: none;
@@ -171,6 +346,7 @@
     .home-space {
         height: 55px;
     }
+>>>>>>> 339daaff89f868c15132ef3cac4a308e778032ab
     .default-theme .nav-icon span {
         background: #013968;
         height: 3px;
