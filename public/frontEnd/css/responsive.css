@@ -1,0 +1,309 @@
+@media screen and (min-width:320px) and (max-width:767px) {
+    
+.header-top {
+    display: none;
+}
+.desktop-banner{
+    display:none;
+}
+.mobile-banner{
+    display:block;
+}
+.desktop-logo{
+    display:none;
+}
+.mobile-logo{
+    display:block;
+}
+.live-chat {
+	float: right;
+	margin-top: -15px;
+	margin-right: 13px;
+}
+.nav-icon {
+	left: 10px !important;
+	top: 22px !important;
+}
+.show-menu {
+    left: 0 !important;
+}
+.fmobile-hide{
+    display:none !important;
+}
+   .header-top-left > ul{
+       display: none;
+    }
+    .postsection{
+        display:block !important;
+    }
+    .postsection a {
+    	padding: 12px 0 !important;
+    	font-weight: 600;
+    }
+    .home-page-modal h3 {
+    	font-size: 22px;
+    }
+    .banner-content {
+        width: 350px;
+        padding-top: 50px;
+    }
+    .home-banner {
+    	height: 160px;
+    }
+    .header-post-ads {
+        display:none;
+    }
+    .live-chat {
+    	text-align: right;
+    	display:block !important;
+    }
+    .home-search {
+    	padding: 10px 0;
+    }
+    .cat-search {
+        display: none;
+    }
+    .filter-and-search {
+        padding-bottom: 15px;
+    }
+    .sidebar {
+        border-right: 0px;
+        display: none;
+    }
+    .hsearch-box .nice-select {
+       margin-bottom: 10px
+    }
+    .search-keyword {
+        margin-top: 0px
+    }
+    .single-footer-content {
+        width: 100%;
+        margin-top: 6px;
+        float: none;
+    }
+    .single-footer-content ul li a {
+        text-align: center;
+    }
+    .copyright p {
+        text-align: center;
+    }
+    .postsection {
+    	padding: 0px 0;
+    	position: fixed;
+    	width: 100%;
+    	bottom: 5px;
+    	z-index: 9;
+    }
+    .home-space {
+	height: 55px;
+}
+    .default-theme .nav-icon span {
+        background: #013968;
+        height: 3px;
+    }
+    .header-top-right {
+     display: none;
+    }
+    .header-top-left ul li a{
+        padding: 0 0;
+    }
+    .main-logo,.publish-ad{
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+    }
+   .swipe-menu {
+        height: 65px;
+    }
+    .mobile-menu .swipe-menu.default-theme {
+        background: #fff;
+    }
+    .nav-icon {
+        width: 24px;
+        top:15px;
+    }
+    .default-theme .codehim-nav {
+        background: #fff;
+        border: 2px solid #ddd;
+        right: -500px;
+        width: 300px;
+        top: 67px;
+    }
+    .mobile-logout a {
+    	background: #013968;
+    	color: #fff !important;
+    	text-align: center;
+    	padding-left: 20px !important;
+    }
+    .mobile-signin a {
+    	text-align: right !important;
+    	color: #D66B0D !important;
+    }
+    .mobile-margin-top {
+        margin-top: 65px;
+    }
+    .customer-phone {
+        margin-top: 0;
+    }
+    .share-btn.desktop{
+        display: none;
+    }
+    .share-btn.mobile{
+        display: block;
+    }
+    .m-phone-icon a {
+        background: #028C8B;
+        color: #fff !important;
+        display: block;
+        text-align: center;
+        padding: 12px 0;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .mobile-chat-phon {
+    	display: block;
+    	margin-bottom: 0px;
+    	position: fixed;
+    	width: 92%;
+    	bottom: 0;
+    	z-index: 999;
+    }
+    .m-chat-icon a {
+        background: #006277;
+        color: #fff !important;
+        display: block;
+        text-align: center;
+        padding: 12px 0;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+        
+    .mobile-menu .codehim-nav ul li {
+        display: block;
+    }
+    .mobile-menu .codehim-nav ul li span,.mobile-menu .codehim-nav ul li a {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    .mobile-menu .codehim-nav ul li span:hover,.mobile-menu .codehim-nav ul li a:hover {
+        background: #013968;
+    }
+    .mobile-postad {
+        transition: 0.5s all;
+        margin-right: 8px;
+    }
+    .mobile-logo {
+        display: block !important;
+    }
+    .mobile-postad a {
+        font-size: 12px;
+        padding: 6px 10px;
+        background: #013968;
+        border: 1px solid #013968;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 50px;
+        text-transform: capitalize;
+        margin: 10px 8px;
+        display: inline-block;
+    }
+    .header-top-left {
+        text-align: center;
+        padding: 16px 0;
+        margin-top: 18px;
+    }
+    .main-header {
+        padding: 0px 0;
+    }
+    .catad {
+        text-align: center;
+    }
+    .hsearch-box select{
+        margin-bottom: 5px;
+    }
+    .browse-all{
+        margin-top: 20px;
+    }
+    .advertisment .mads {
+            text-align: center;
+    }
+    .counter-item{
+        margin-bottom: 10px;
+    }
+    .flink .title{
+        margin-top:20px;
+    }
+    .tgoogle-ads {
+    margin-bottom: 20px;
+    }
+   .mobile-logo {
+	display: block !important;
+	text-align: center;
+	top: 2px;
+	position: absolute;
+	right: 0;
+	overflow: hidden;
+	width: 250px;
+	left: 48px;
+	text-align: left;
+}
+.home-banner-section {
+    border-top: 1px solid #ddd;
+    margin-top: 70px;
+}
+
+    .mobile-logo img {
+	   width: 60%;
+    }
+    .footer-about img {
+    	width: 50%;
+    	height: 90px;
+    }
+    .single-ads .ads-image {
+    	height: 215px;
+    	overflow: hidden;
+    }
+    .header-top-left ul {
+        padding-bottom: 10px;
+        border-left: 1px solid transparent;
+        transition: 0.5s all;
+        display: inline-block;
+    }
+    .sm-show{
+        display:block;
+    }
+    .sm-hide{
+        display:none;
+    }
+
+}
+
+@media screen and (min-width:320px) and (max-width:620px) {
+
+
+}
+@media screen and (min-width:992px) and (max-width: 1199px) {
+ 
+}
+
+
+@media screen and (min-width:768px) and (max-width: 991px) {
+    
+   .header-top-left > ul {
+        border-left: 1px solid transparent;
+        display: none;
+    }
+    .mads {
+    text-align: right;
+    }
+    .header-top-left ul{
+        border-color: transparent;
+    }
+    .header-top-right {
+        text-align: center;
+        transition: 0.5s all;
+        padding-bottom: 35px !important;
+        padding-top: 0;
+    }
+}
