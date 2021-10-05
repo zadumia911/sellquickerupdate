@@ -51,7 +51,7 @@
 	 					<div class="col-sm-10">
 	 						<div class="subcategory">
 	 							<ul>
-	 								<li class="highlight"><a href="">{{$value->name}}</a></li>
+	 								<li class="highlight"><a href="{{url('category/'.$value->slug)}}">{{$value->name}}</a></li>
 	 								@foreach($value->hsubcategories as $subcategory)
 	 								<li><a href="">{{$subcategory->subcategoryName}}</a></li>
 	 								@endforeach
