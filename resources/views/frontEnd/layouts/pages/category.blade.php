@@ -171,6 +171,52 @@
 			<div class="col-lg-3 col-md-3 col-sm-12">
 				<div class="sidebar">
 					<div class="ads-type">
+						<p>Sort by</p>
+						<form action="">
+							<div class="form-control">
+								 <input type="radio" name="filter" value="1"  onchange="this.form.submit()" id="urgent" @if($filter==1)checked=""@endif>
+								 <label for="urgent">All</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
+								<label for="dorstep">Newest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
+								<label for="dorstep">Oldest</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
+								<label for="dorstep">Price : Low > High</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
+								<label for="dorstep">Price : High > Low</label> 
+							</div>
+
+						</form>
+					</div>
+
+					<div class="ads-type">
+						<p>Condition</p>
+						<form action="">
+							<div class="form-control">
+								 <input type="radio" name="filter" value="1"  onchange="this.form.submit()" id="urgent" @if($filter==1)checked=""@endif>
+								 <label for="urgent">All</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
+								<label for="dorstep">New</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
+								<label for="dorstep">Used</label> 
+							</div>
+
+						</form>
+					</div>
+
+					<div class="ads-type">
 						<p>সদস্যের ধরণ</p>
 						<form action="">
 							<div class="form-control">
@@ -189,10 +235,8 @@
 						</div>
 				         <ul>
 				            @foreach($subcategories as $key=>$value)
-				             @php 
-				            	$totalcat = App\Advertisment::where(['subcategory_id'=>$value->id,'status'=>1])->get(); 
-				            @endphp 
-				        	<li><a href="{{url('category/'.$breadcrumb->slug.'/'.$value->slug)}}">{{$value->subcategoryName}} ({{$totalcat->count()}})</a></li>
+				             
+				        	<li><a href="{{url('category/'.$breadcrumb->slug.'/'.$value->slug)}}">{{$value->subcategoryName}} ({{$value->ads->count()}})</a></li>
 				        	@endforeach
 				   		 </ul>
 					</div>
@@ -246,14 +290,11 @@
 									  		<div class="col-lg-9 col-md-9 col-sm-9 col-9">
 									  			<div class="list-ad-info">
 									  				<h5><a href="{{url('details/'.$value->id.'/'.$value->slug)}}">{{substr($value->title,0,50)}}</a></h5>
-									  				@php
-									  					$thana = App\Thana::find($value->thana_id);
-									  					$union = App\Union::find($value->union_id);
-									  				@endphp
+									  				
 									  				<div class="common_area">
-									  				<p><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->divi_name}} <i class="fa fa-angle-right"></i> {{$value->dist_name}} @if($thana !=NULL) <i class="fa fa-angle-right"></i> {{$thana->thana_name}} 
+									  				<p><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
 									  				@endif
-									  				@if($union !=NULL) <i class="fa fa-angle-right"></i> {{$union->union_name}} 
+									  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
 									  				@endif</p>
 									  				
 									  				<div class="datetime_area">
@@ -262,14 +303,14 @@
 									  				<p class="post_date"><i class="fa fa-eye icon_color" aria-hidden="true"></i> Views: 220</p>
 									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
 									  				</div>
-
-									  				
-
+									  			    </div>
+									  			    <div class="cat_des">
+									  			    	{!!$value->description!!}
 									  			    </div>
 									  				<p>@if($value->membership==2)
 									  					<img src="{{asset('public/frontEnd/images/shield.png')}}" alt="" class="membertag">
-									  				 @endif{{$value->catname}}</p>
-									  				<strong>{{$value->price}}</strong>
+									  				 @endif </p>
+									  				<strong class="cat_price">TK. {{$value->price}}</strong>
 									  			</div>
 									  		</div>
 									  	</div>

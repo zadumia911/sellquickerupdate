@@ -807,7 +807,6 @@ form.main-search-box button {
 }
 .filter-and-search {
     margin-top: 12px;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
 .location-filter button {
@@ -2082,14 +2081,14 @@ form.main-search-box button {
 .common_area {
     position: absolute;
     bottom: 0;
-    border-top: 1px solid #af2e2e;
+    border-top: 1px solid #f56565;
     width: 100%;
     padding-top: 6px;
     display: flex;
 }
 
 .icon_color {
-    color: #b92f2f;
+    color: #f56565;
     margin-right: 5px;
 }
 .datetime_area {
@@ -2098,5 +2097,16 @@ form.main-search-box button {
 }
 .datetime_area p {
     margin-left: 4px;
+}
+.cat_price {
+    font-size: 25px;
+    color:red !important;
+}
+.cat_price {
+    font-size: 25px;
+    color: #f56565!important;
+    font-weight: 600 !important;
+    margin-top: 22px !important;
+    display: inline-block;
 }
 
