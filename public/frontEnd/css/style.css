@@ -1167,13 +1167,12 @@ form.main-search-box button {
    CATEGORY PAGE CSS START
 ===================================*/
 .list-ad-image {
-    height: 150px;
+    height: 230px;
     width: 100%;
     padding: 5px;
 }
 .list-ad-image img {
     object-fit: contain;
-    background: #ddd;
 }
 .list-product.big-ads {
     height: 260px;
@@ -1269,6 +1268,8 @@ form.main-search-box button {
 .list-product {
     background: #fff;
     transition: 0.35s all;
+    margin-bottom: 15px;
+    padding: 10px 13px;
 }
 .ads-type label {
     font-size: 14px;

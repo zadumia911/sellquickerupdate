@@ -292,7 +292,7 @@
 									  				<h5><a href="{{url('details/'.$value->id.'/'.$value->slug)}}">{{substr($value->title,0,50)}}</a></h5>
 									  				
 									  				<div class="common_area">
-									  				<p><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
+									  				<p style="width: 65%"><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
 									  				@endif
 									  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
 									  				@endif</p>
@@ -300,7 +300,6 @@
 									  				<div class="datetime_area">
 									  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
 
-									  				<p class="post_date"><i class="fa fa-eye icon_color" aria-hidden="true"></i> Views: 220</p>
 									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
 									  				</div>
 									  			    </div>
