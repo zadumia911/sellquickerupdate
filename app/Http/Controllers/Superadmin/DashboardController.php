@@ -5,10 +5,28 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Customer;
+use App\User;
+use App\Advertisment;
+use today;
+use Carbon\Carbon;
 class DashboardController extends Controller
 {
     public function index(){
-    	return view('backEnd.superadmin.dashboard');
+
+    	$alluser = User::count();
+    	$newads  = Advertisment::where(['request'=>0, 'status'=>0])->count();
+    	$updateads  = Advertisment::where(['request'=>0, 'status'=>1])->count();
+    	$premiumads  = Advertisment::where('premium',2)->count();
+    	$adsall  = Advertisment::where(['request'=>1, 'status'=>1])->count();
+    	$membeReqeuest  = Customer::where('membership',3)->count();
+    	$totalMember  = Customer::orWhere('membership',1)->orWhere('membership',2)->orWhere('membership',3)->count();
+    	$cancelMember  = Customer::where('membership',2)->count();
+    	$todayAds  = Advertisment::whereDate('created_at',Carbon::today())->count();
+    	$totalcustomer  = Customer::count();
+
+    	return view('backEnd.superadmin.dashboard',compact('alluser','newads','updateads','premiumads','adsall','membeReqeuest','totalMember','cancelMember','todayAds','totalcustomer'));
+
+
     }
     public function cinactive(Request $request){
 	    $active_data         =   Customer::find($request->hidden_id);
@@ -63,4 +81,7 @@ class DashboardController extends Controller
     		$allmembership = Customer::orWhere('membership',1)->orWhere('membership',2)->orWhere('membership',3)->get();
     		return view('backEnd.customer.allmembership',compact('allmembership'));
     	}
+
+
+
 }

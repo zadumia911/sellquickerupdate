@@ -112,7 +112,7 @@ class CustomerController extends Controller
          'passResetToken' => $passResetToken,
         );
         $send = Mail::send('frontEnd.emails.forgetpassword', $data, function($textmsg) use ($data){
-         $textmsg->from('info@hatbodol.com');
+         $textmsg->from('info@sellquicker.com');
          $textmsg->to($data['contact_email']);
          $textmsg->subject('Forget password code');
         });
@@ -202,7 +202,7 @@ class CustomerController extends Controller
             );
             // return $data;
             $send = Mail::send('frontEnd.emails.accountverify', $data, function($textmsg) use ($data){
-             $textmsg->from('info@hatbodol.com');
+             $textmsg->from('info@sellquicker.com');
              $textmsg->to($data['email']);
              $textmsg->subject('Account Verification');
             });
