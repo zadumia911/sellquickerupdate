@@ -50,27 +50,47 @@ class FrontEndController extends Controller
         return view('frontEnd.index',compact('homecategories'));
     }
      public function category($slug,Request $request){
-
         $breadcrumb=Category::where('slug',$slug)->first();
         $subcategories=Subcategory::where('category_id',$breadcrumb->id)->with('ads')->get();
         if($breadcrumb){
         $currentdata=Carbon::now()->format('Y-m-d');
-
-        if($request->filter){
-            if($request->filter==1){
+         if($request->filter==1){
             $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
-                ->where('membership',1)
-                 ->where('adsduration','>=',$currentdata)
+                ->where('version',1)
+                ->where('adsduration','>=',$currentdata)
                 ->orderBy('id','DESC')
                 ->paginate(25);
-            }else{
+            }elseif($request->filter==2){
                 $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
-                 ->where('membership',2)
+                ->where('version',2)
                  ->where('adsduration','>=',$currentdata)
-                ->orderBy('id','DESC')
                 ->paginate(25);
-            }
-        }else{
+            }elseif($request->sort==1){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','DESC')
+            ->paginate(25);
+         }elseif($request->sort==2){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','ASC')
+            ->paginate(25);
+         }elseif($request->sort==3){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('price','ASC')
+            ->paginate(25);
+         }elseif($request->sort==4){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('price','DESC')
+            ->paginate(25);
+         }elseif($request->sort==4){
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('price','DESC')
+            ->paginate(25);
+         }else{
             $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
             ->where('adsduration','>=',$currentdata)
             ->orderBy('id','DESC')
