@@ -85,12 +85,7 @@
     </header>
     <!--header end-->
     <section class="mobile-menu ">
-        <div class="swipe-menu default-theme">
-             <div class="nav-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="swipe-menu default-theme">            
             <nav class="codehim-nav">
                     <ul class="menu-item">
                          @if($customerId!==NULL)
@@ -118,6 +113,7 @@
                     </ul>
                 <!--//Tab-->
             </nav>
+
         <!--Navigation Icon-->
         	<div class="mobile-logo">
         		<a href="{{url('/')}}">
@@ -126,9 +122,11 @@
                     @endforeach
         		</a>
         	</div>
-            <ul class="live-chat">
-                <li><a href="https://www.facebook.com/groups/440866056936777"><img src="{{asset('public/frontEnd/images/chat.png')}}" alt=""  target="_blank"></a></li>
-            </ul>
+            <div class="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </section>
     <!-- mobile menu end -->
