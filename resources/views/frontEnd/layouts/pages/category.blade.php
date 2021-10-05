@@ -251,13 +251,20 @@
 									  					$union = App\Union::find($value->union_id);
 									  				@endphp
 									  				<div class="common_area">
-									  				<p><i class="fa fa-map-marker" aria-hidden="true"></i> {{$value->divi_name}} <i class="fa fa-angle-right"></i> {{$value->dist_name}} @if($thana !=NULL) <i class="fa fa-angle-right"></i> {{$thana->thana_name}} 
+									  				<p><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->divi_name}} <i class="fa fa-angle-right"></i> {{$value->dist_name}} @if($thana !=NULL) <i class="fa fa-angle-right"></i> {{$thana->thana_name}} 
 									  				@endif
 									  				@if($union !=NULL) <i class="fa fa-angle-right"></i> {{$union->union_name}} 
 									  				@endif</p>
-									  				<p class="post_date"><i class="fa fa-clock-o" aria-hidden="true"></i> 2 Oct, 2021</p>
+									  				
+									  				<div class="datetime_area">
+									  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
 
-									  				<p class="post_date"><i class="fa fa-eye" aria-hidden="true"></i> Views: 220</p>
+									  				<p class="post_date"><i class="fa fa-eye icon_color" aria-hidden="true"></i> Views: 220</p>
+									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
+									  				</div>
+
+									  				
+
 									  			    </div>
 									  				<p>@if($value->membership==2)
 									  					<img src="{{asset('public/frontEnd/images/shield.png')}}" alt="" class="membertag">
