@@ -171,6 +171,20 @@
 			<div class="col-lg-3 col-md-3 col-sm-12">
 				<div class="sidebar">
 					<div class="ads-type">
+						<p>Sort by</p>
+						<form action="">
+							<div class="form-control">
+								 <input type="radio" name="filter" value="1"  onchange="this.form.submit()" id="urgent" @if($filter==1)checked=""@endif>
+								 <label for="urgent">নন মেম্বারশিপ</label> 
+							</div>
+							<div class="form-control">
+								<input type="radio" id="dorstep" name="filter" value="2"  onchange="this.form.submit()" @if($filter==2)checked=""@endif>
+								<label for="dorstep">মেম্বারশিপ</label> 
+							</div>
+						</form>
+					</div>
+					
+					<div class="ads-type">
 						<p>সদস্যের ধরণ</p>
 						<form action="">
 							<div class="form-control">
@@ -262,14 +276,14 @@
 									  				<p class="post_date"><i class="fa fa-eye icon_color" aria-hidden="true"></i> Views: 220</p>
 									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
 									  				</div>
-
-									  				
-
+									  			    </div>
+									  			    <div class="cat_des">
+									  			    	{!!$value->description!!}
 									  			    </div>
 									  				<p>@if($value->membership==2)
 									  					<img src="{{asset('public/frontEnd/images/shield.png')}}" alt="" class="membertag">
-									  				 @endif{{$value->catname}}</p>
-									  				<strong>{{$value->price}}</strong>
+									  				 @endif </p>
+									  				<strong class="cat_price">TK. {{$value->price}}</strong>
 									  			</div>
 									  		</div>
 									  	</div>
