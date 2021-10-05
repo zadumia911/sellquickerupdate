@@ -6,17 +6,36 @@
 	    display: block !important;
 	}
 </style>
-<section class="ads-section">
-	<div class="container-fluid">
+<div class="common_breadcrumb">
+	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="banner-top-ad">
-					<img src="{{asset('public/frontEnd/')}}/images/category-ads.gif" alt="">
+				<div class="bread">
+					<ul>
+						<li><a href="{{url('url')}}">Home</a></li>
+						<li>/</li>
+						<li>All ads in Bangladesh</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>
+</div>
+
+ <div class="common_search_area">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-sm-12">
+ 				<form  action="{{url('home-search')}}" method="get" class="main-search-box">
+				@csrf
+					<input type="text" name="keyword" placeholder="Search keyword" class="search-keyword" required="">
+					<button>search</button>
+			  </form>
+			  
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
 <section class="advertisment">
 	<div class="container-fluid">
 		<div class="row">
@@ -184,18 +203,13 @@
 				</div>
 			</div>
 			<!-- first col-3 -->
-			<div class="col-lg-7 col-md-7 col-sm-12">
+			<div class="col-lg-9 col-md-9 col-sm-12">
 				<div class="ad-inner">
 					<div class="ad-filter">
 						<div class="row">
 							<div class="col-lg-12 col-sm-6 col-sm-12">
 								<div class="ads-breadcrumb">
-								  <ul>
-									<li><a href="{{url('/')}}">হোমপেজ</a></li>
-									<li><a class="anchor"><i class="fa fa-angle-right"></i></a></li>
-									<li><a class="anchor">@if($breadcrumb !=NULL) {{$breadcrumb->name}} @else All @endif</a></li>
-								</ul>
-								<p>@if($breadcrumb !=NULL) {{$breadcrumb->name}} @else All @endif এর জন্য  {{$advertisments->count()}} টি  বিজ্ঞাপন খুঁজে পাওয়া গেছে </p>
+								<p>{{$breadcrumb->name}} এর জন্য  {{$advertisments->count()}} টি  বিজ্ঞাপন খুঁজে পাওয়া গেছে </p>
 								</div>
 							</div>
 							<!-- col end -->
@@ -208,7 +222,7 @@
 				  				<div class="list-product @if($key==0) big-ads @endif">
 					  				<a href="">
 					  					<div class="row">
-									  		<div class="col-lg-4 col-md-4 col-sm-4 col-4">
+									  		<div class="col-lg-3 col-md-3 col-sm-3 col-3">
 									  			<div class="list-ad-image">
 									  				<a href="{{url('details/'.$value->id.'/'.$value->slug)}}">
 									  					@foreach($adsimage as $image)
@@ -220,21 +234,29 @@
 									  				</a>
 									  			</div>
 									  		</div>
-									  		<div class="col-lg-8 col-md-8 col-sm-8 col-8">
+									  		<div class="col-lg-9 col-md-9 col-sm-9 col-9">
 									  			<div class="list-ad-info">
 									  				<h5><a href="{{url('details/'.$value->id.'/'.$value->slug)}}">{{substr($value->title,0,50)}}</a></h5>
-									  				@php
-									  					$thana = App\Thana::find($value->thana_id);
-									  					$union = App\Union::find($value->union_id);
-									  				@endphp
-									  				<p>{{$value->divi_name}} <i class="fa fa-angle-right"></i> {{$value->dist_name}} @if($thana !=NULL) <i class="fa fa-angle-right"></i> {{$thana->thana_name}} 
+									  				
+									  				<div class="common_area">
+									  				<p style="width: 65%"><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
 									  				@endif
-									  				@if($union !=NULL) <i class="fa fa-angle-right"></i> {{$union->union_name}} 
+									  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
 									  				@endif</p>
+									  				
+									  				<div class="datetime_area">
+									  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
+
+									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
+									  				</div>
+									  			    </div>
+									  			    <div class="cat_des">
+									  			    	{!!$value->description!!}
+									  			    </div>
 									  				<p>@if($value->membership==2)
 									  					<img src="{{asset('public/frontEnd/images/shield.png')}}" alt="" class="membertag">
-									  				 @endif{{$value->catname}}</p>
-									  				<strong>{{$value->price}}</strong>
+									  				 @endif </p>
+									  				<strong class="cat_price">TK. {{$value->price}}</strong>
 									  			</div>
 									  		</div>
 									  	</div>
@@ -251,14 +273,7 @@
 				</div>
 			</div>
 			<!-- first col-6 end -->
-			<div class="col-sm-2">
-				<div class="mads">
-					<a href="">
-						<img src="{{asset('public/frontEnd/')}}/images/hproad1.jpg" alt="">
-					</a>
-				</div>
-				<!-- mads end -->
-			</div>
+			
 		</div>
 		<!-- row end -->
 	</div>

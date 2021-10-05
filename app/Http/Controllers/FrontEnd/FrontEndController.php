@@ -115,92 +115,50 @@ class FrontEndController extends Controller
         $currentdata=Carbon::now()->format('Y-m-d');
         if($request->filter){
             if($request->filter==1){
-            $advertisments= DB::table('advertisments')
-                ->join('categories','advertisments.category_id','=','categories.id')
-                ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-                ->join('divisions','advertisments.division_id','=','divisions.id')
-                ->join('districts','advertisments.dist_id','=','districts.id')
-                ->join('customers','advertisments.customer_id','=','customers.id')
-                ->where(['advertisments.status'=>1,'advertisments.request'=>1,'advertisments.category_id'=>$breadcrumb->id])
-                ->where('advertisments.membership',1)
-                 ->where('advertisments.adsduration','>=',$currentdata)
-                ->orderBy('advertisments.id','DESC')
-                ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+                ->where('membership',1)
+                 ->where('adsduration','>=',$currentdata)
+                ->orderBy('id','DESC')
                 ->paginate(25);
             }else{
-                $advertisments= DB::table('advertisments')
-                ->join('categories','advertisments.category_id','=','categories.id')
-                ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-                ->join('divisions','advertisments.division_id','=','divisions.id')
-                ->join('districts','advertisments.dist_id','=','districts.id')
-                ->join('customers','advertisments.customer_id','=','customers.id')
-               ->where(['advertisments.status'=>1,'advertisments.request'=>1,'advertisments.category_id'=>$breadcrumb->id])
-                ->where('advertisments.membership',2)
-                 ->where('advertisments.adsduration','>=',$currentdata)
-                ->orderBy('advertisments.id','DESC')
-                ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
-                ->paginate(25);
+                $advertisments= Advertisment::where(['status'=>1,'request'=>1,'category_id'=>$breadcrumb->id])
+                 ->where('membership',2)
+                 ->where('adsduration','>=',$currentdata)
+                 ->orderBy('id','DESC')
+                 ->paginate(25);
             }
         }elseif($request->location && $request->category){
             // return "location and category";
-            $advertisments= DB::table('advertisments')
-            ->join('categories','advertisments.category_id','=','categories.id')
-            ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-            ->join('divisions','advertisments.division_id','=','divisions.id')
-            ->join('districts','advertisments.dist_id','=','districts.id')
-            ->join('customers','advertisments.customer_id','=','customers.id')
-            ->where(['advertisments.status'=>1,'advertisments.request'=>1])
-             ->where('advertisments.category_id',$breadcrumb->id)
-             ->where('advertisments.dist_id',$request->location)
-              ->where('advertisments.title','LIKE','%'.$keyword."%")
-             ->where('advertisments.adsduration','>=',$currentdata)
-            ->orderBy('advertisments.id','DESC')
-            ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1])
+             ->where('category_id',$breadcrumb->id)
+             ->where('dist_id',$request->location)
+              ->where('title','LIKE','%'.$keyword."%")
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','DESC')
             ->paginate(25);
             // advertisment
         }elseif($request->location){
             return "location";
-            $advertisments= DB::table('advertisments')
-            ->join('categories','advertisments.category_id','=','categories.id')
-            ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-            ->join('divisions','advertisments.division_id','=','divisions.id')
-            ->join('districts','advertisments.dist_id','=','districts.id')
-            ->join('customers','advertisments.customer_id','=','customers.id')
-            ->where(['advertisments.status'=>1,'advertisments.request'=>1])
-             ->where('advertisments.dist_id',$request->location)
-             ->where('advertisments.title','LIKE','%'.$keyword."%")
-             ->where('advertisments.adsduration','>=',$currentdata)
-            ->orderBy('advertisments.id','DESC')
-            ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1])
+             ->where('dist_id',$request->location)
+             ->where('title','LIKE','%'.$keyword."%")
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','DESC')
             ->paginate(25);
             // advertisment
         }elseif($request->category){
-            $advertisments= DB::table('advertisments')
-            ->join('categories','advertisments.category_id','=','categories.id')
-            ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-            ->join('divisions','advertisments.division_id','=','divisions.id')
-            ->join('districts','advertisments.dist_id','=','districts.id')
-            ->join('customers','advertisments.customer_id','=','customers.id')
-            ->where(['advertisments.status'=>1,'advertisments.request'=>1])
-             ->where('advertisments.category_id',$breadcrumb->id)
-             ->where('advertisments.title','LIKE','%'.$keyword."%")
-             ->where('advertisments.adsduration','>=',$currentdata)
-            ->orderBy('advertisments.id','DESC')
-            ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1])
+             ->where('category_id',$breadcrumb->id)
+             ->where('title','LIKE','%'.$keyword."%")
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','DESC')
             ->paginate(25);
             // advertisment
         }else{
-            $advertisments= DB::table('advertisments')
-            ->join('categories','advertisments.category_id','=','categories.id')
-            ->join('subcategories','advertisments.subcategory_id','=','subcategories.id')
-            ->join('divisions','advertisments.division_id','=','divisions.id')
-            ->join('districts','advertisments.dist_id','=','districts.id')
-            ->join('customers','advertisments.customer_id','=','customers.id')
-            ->where(['advertisments.status'=>1,'advertisments.request'=>1])
-            ->where('advertisments.title','LIKE','%'.$keyword."%")
-             ->where('advertisments.adsduration','>=',$currentdata)
-            ->orderBy('advertisments.id','DESC')
-            ->select('advertisments.*','categories.name as catname','subcategories.subcategoryName','divisions.name as divi_name','districts.dist_name','customers.membership')
+            $advertisments= Advertisment::where(['status'=>1,'request'=>1])
+            ->where('title','LIKE','%'.$keyword."%")
+             ->where('adsduration','>=',$currentdata)
+            ->orderBy('id','DESC')
             ->paginate(25);
             // advertisment
         }
