@@ -256,36 +256,31 @@
 				  		<div class="row">
 				  			<div class="col-sm-12">
 				  				@foreach($advertisments as $key=>$value)
-				  				<div class="list-product @if($key==0) big-ads @endif">
+				  				<div class="list-product">
 					  				<a href="">
 					  					<div class="row">
-									  		<div class="col-lg-3 col-md-3 col-sm-3 col-3">
+									  		<div class="col-lg-3 col-md-3 col-sm-3 col-12">
 									  			<div class="list-ad-image">
 									  				<a href="{{url('details/'.$value->id.'/'.$value->slug)}}">
-									  					@foreach($adsimage as $image)
-							                             @if($value->id==$image->ads_id)
-							                             <img src="{{asset($image->image)}}" alt="">
-							                              @break
-							                              @endif
-							                         	 @endforeach
+									  				<img src="{{asset($value->image->image)}}" alt="">
 									  				</a>
 									  			</div>
 									  		</div>
-									  		<div class="col-lg-9 col-md-9 col-sm-9 col-9">
+									  		<div class="col-lg-9 col-md-9 col-sm-9 col-12">
 									  			<div class="list-ad-info">
 									  				<h5><a href="{{url('details/'.$value->id.'/'.$value->slug)}}">{{substr($value->title,0,50)}}</a></h5>
 									  				
 									  				<div class="common_area">
-									  				<p style="width: 65%"><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
-									  				@endif
-									  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
-									  				@endif</p>
-									  				
-									  				<div class="datetime_area">
-									  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
-
-									  				<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
-									  				</div>
+									  					<div class="post-location">
+									  						<p><i class="fa fa-map-marker icon_color" aria-hidden="true"></i> {{$value->division->name}} <i class="fa fa-angle-right"></i> {{$value->district->dist_name}} @if($value->thana !=NULL) <i class="fa fa-angle-right"></i> {{$value->thana->thana_name}} 
+											  				@endif
+											  				@if($value->union !=NULL) <i class="fa fa-angle-right"></i> {{$value->union->union_name}} 
+											  				@endif</p>
+									  					</div>
+										  				<div class="datetime_area">
+										  					<p class="post_date"><i class="fa fa-clock-o icon_color" aria-hidden="true"></i> {{date('M d, Y', strtotime($value->created_at))}}</p>
+										  					<p class="post_date"> Condition: {{$value->version==1?"New":"Used"}}</p>
+										  				</div>
 									  			    </div>
 									  			    <div class="cat_des">
 									  			    	{!!$value->description!!}
@@ -300,7 +295,7 @@
 					  				</a>
 				  				</div>
 						  		<!-- list product end -->
-						  	@endforeach
+						  	  @endforeach
 				  		</div>
 				  	</div>
 				  	</div>

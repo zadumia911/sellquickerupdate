@@ -10,7 +10,6 @@ Route::group(['namespace'=>'FrontEnd'], function(){
    Route::get('/ads/{slug}/{id}', 'FrontEndController@subcategory');
    Route::get('/details/{id}/{slug}', 'FrontEndController@details');
    Route::get('/search-category','FrontEndController@searchcategory');
-   Route::post('/search/products','FrontEndController@searchproduct');
    Route::get('/location/{slug}','FrontEndController@locationads');
    Route::get('/location/{division}/{district}/{thana}','FrontEndController@thana_ads');
    Route::get('/location/{division}/{district}/{thana}/{union}','FrontEndController@union_ads');

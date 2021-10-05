@@ -25,10 +25,10 @@ class Advertisment extends Model
         return $this->belongsTo('App\Union','union_id');
     }
     public function image(){
-        return $this->hasOne('App\Adsimage','id','ads_id',);
+        return $this->hasOne('App\Adsimage','ads_id','id');
     }
     public function images(){
-        return $this->hasMany('App\Adsimage','ads_id',);
+        return $this->hasMany('App\Adsimage','ads_id');
     }
     public function customer(){
         return $this->belongsTo('App\Customer','customer_id');

@@ -1,7 +1,33 @@
-@media screen and (min-width:320px) and (max-width:767px) {
-    
+@media screen and (min-width:320px) and (max-width:767px) { 
 .header-top {
     display: none;
+}
+.list-ad-image {
+    height: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+.datetime_area {
+    width: 100%;
+    display: block;
+}
+.post-location {
+    width: 100%;
+    display: block;
+}
+.common_area {
+    position: relative;
+    display: block;
+}
+.datetime_area p {
+    display: inline-block;
+    margin: 0;
+}
+.cat_des {
+    display: none;
+}
+.cat_price {
+    margin: 0 !important;
 }
 .desktop-banner{
     display:none;

@@ -2068,6 +2068,9 @@ form.main-search-box button {
    background: #004443;
    color:#fff;
 }
+.post-location {
+    width: 65%;
+}
 
 /*============ Design By Milon =============*/
 .common_breadcrumb {
