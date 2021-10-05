@@ -14,13 +14,9 @@
 												<div>											
 													<h5>{{$adsdetails->title}}</h5>
 													<p>For sale by <a href="#">{{$adsdetails->customerName}}</a>
-														@php
-										  					$thana = App\Thana::find($adsdetails->thana_id);
-										  					$union = App\Union::find($adsdetails->union_id);
-										  				@endphp
-										  				{{$adsdetails->division_name}} <i class="fa fa-angle-right"></i> {{$adsdetails->dist_name}} @if($adsdetails !=NULL) <i class="fa fa-angle-right"></i> {{$thana->thana_name}} 
+										  				{{$adsdetails->division->name}} <i class="fa fa-angle-right"></i> {{$adsdetails->district->dist_name}} @if($adsdetails->thana) <i class="fa fa-angle-right"></i> {{$adsdetails->thana->thana_name}} 
 										  				@endif
-										  				@if($union !=NULL) <i class="fa fa-angle-right"></i> {{$union->union_name}} 
+										  				@if($adsdetails->union) <i class="fa fa-angle-right"></i> {{$adsdetails->union->union_name}} 
 										  				@endif</p>
 												</div>
 												<div class="adsdetails-price-right">
@@ -36,13 +32,11 @@
 								<!-- details head end-->
 								<div class="advertisment-details-body">
 									<div class="dslider owl-carousel">
-										@foreach($adsimage as $image)
-	                   	@if($adsdetails->id==$image->ads_id)
+										@foreach($adsdetails->images as $image)
 	                   	<div class="dslider-item">
 												<img src="{{asset($image->image)}}" alt="">
 											</div>
 											<!-- dslider end -->
-	                    @endif
 	                  @endforeach
 										
 									</div>
@@ -62,7 +56,7 @@
 												<img src="{{asset('public/frontEnd/images/customer.png')}}" class="avatar-pic" alt="">
 											</div>
 											<p class="avatar-for-sale">For sale by</p>
-											<h3 class="avatar-name">{{$adsdetails->customerName}}</h3>
+											<h3 class="avatar-name">{{$adsdetails->customer->name}}</h3>
 											<div class="avatar-contact">
 												<div class="avatar-contact-phone">
 													<div class="avatar-contact-left">													
@@ -76,7 +70,7 @@
 													</div>
 												</div>
 												<div>													
-													<a href="" class="avatar-contact-btn">View all ads</a>
+													<a href="{{url('profile/'.$adsdetails->customer->id)}}" class="avatar-contact-btn">View all ads</a>
 												</div>
 											</div>
 										</div>
@@ -87,69 +81,69 @@
 											</li>
 											<li><i class="fa fa-clock-o"></i> <a href="">বিজ্ঞাপনের তারিখ  <span>{{$adsdetails->created_at}}</span></a>
 											</li>
-											<li><i class="fa fa-user"></i> <a href="">@if($adsdetails->membership==1) <i class="fa fa-circle text-success"></i> @endif {{$adsdetails->customerName}} @if($adsdetails->membership==1)<img src="{{asset('public/frontEnd')}}/images/shield.png" alt="" width="20"/>@endif <span>এই মেম্বারের পেইজ ভিজিট করুন</span></a>
+											<li><i class="fa fa-user"></i> <a href="{{url('profile/'.$adsdetails->customer->id)}}">@if($adsdetails->membership==1) <i class="fa fa-circle text-success"></i> @endif {{$adsdetails->customer->name}} @if($adsdetails->membership==1)<img src="{{asset('public/frontEnd')}}/images/shield.png" alt="" width="20"/>@endif <span>এই মেম্বারের পেইজ ভিজিট করুন</span></a>
 											</li>
 										</ul>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="dprice">
-								<h5>Price:  {{$adsdetails->price}}</h5>
-							 </div>
-							<div class="content">
-								<div class="row">
-									<div class="col-sm-4">
-									    
-										<div class="product-basic">
-											 <ul>
-											  	<li>Consition : </li>
-											  	<li>{{$adsdetails->version==1?"New":"Used"}}</li>
-											 </ul> 
-											 <ul>
-											  	<li>Brand : </li>
-											  	<li>{{$adsdetails->brand}}</li>
-											 </ul> 
-											 <ul>
-											  	<li>Model : </li>
-											  	<li>{{$adsdetails->model}}</li>
-											 </ul> 
-											 <ul>
-											  	<li>Edition : </li>
-											  	<li>{{$adsdetails->edition}}</li>
-											 </ul>  
-											 <ul>
-											  	<li>Authencity : </li>
-											  	<li>{{$adsdetails->type==1?"Copy":"Original"}}</li>
-											 </ul>  
-										</div>
-									</div>
-								</div>
-								<div class="ads-feature">
-									<h5>Featured</h5>
-									<div class="row">
-										<div class="col-sm-8">
-											<p>{{$adsdetails->feature}}</p>
-										</div>
-									</div>
-								</div>
-								<div class="ads-description">
-									<h5>Description</h5>
-									<div class="row">
-										<div class="col-sm-8">
-											<p>{!!$adsdetails->description!!}</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="share-btn mobile">
-								<p><i class="fa fa-share-alt"></i> শেয়ার করুন </p>
-        <div class="addthis_inline_share_toolbox_wrjo"></div>
-    
 							</div>	
 						</div>
-						
+						<div class="col-sm-12">
+							<div class="main-content">
+								 <div class="dprice">
+									<h5>Description : </h5>
+								 </div>
+								 <div class="content">
+									<div class="row">
+										<div class="col-sm-4">
+										    
+											<div class="product-basic">
+												 <ul>
+												  	<li>Condition : </li>
+												  	<li>{{$adsdetails->version==1?"New":"Used"}}</li>
+												 </ul> 
+												 <ul>
+												  	<li>Brand : </li>
+												  	<li>{{$adsdetails->brand}}</li>
+												 </ul> 
+												 <ul>
+												  	<li>Model : </li>
+												  	<li>{{$adsdetails->model}}</li>
+												 </ul> 
+												 <ul>
+												  	<li>Edition : </li>
+												  	<li>{{$adsdetails->edition}}</li>
+												 </ul>  
+												 <ul>
+												  	<li>Authencity : </li>
+												  	<li>{{$adsdetails->type==1?"Copy":"Original"}}</li>
+												 </ul>  
+											</div>
+										</div>
+									</div>
+									<div class="ads-feature">
+										<h5>Featured</h5>
+										<div class="row">
+											<div class="col-sm-8">
+												<p>{{$adsdetails->feature}}</p>
+											</div>
+										</div>
+									</div>
+									<div class="ads-description">
+										<h5>Description</h5>
+										<div class="row">
+											<div class="col-sm-8">
+												<p>{!!$adsdetails->description!!}</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="share-btn mobile">
+									<p><i class="fa fa-share-alt"></i> শেয়ার করুন </p>
+	                 <div class="addthis_inline_share_toolbox_wrjo"></div>
+								</div>
+							</div>	
+						</div>
 					</div>
 				</div>
 			</div>

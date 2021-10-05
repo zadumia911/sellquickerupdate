@@ -39,7 +39,7 @@ class CustomerController extends Controller
     	$verify = rand(1111,9999);
     	$store_data           	  = 	new Customer();
         $store_data->name         =     $request->name;
-    	$store_data->slug      	  = 	preg_replace('/\s+/u', '-', trim($request->name));
+    	$store_data->slug      	  = 	strlower(preg_replace('/\s+/u', '-', trim($request->name)));
     	$store_data->email  	  = 	$request->email;
     	$store_data->phone  	  = 	$request->phone;
     	$store_data->agree  	  = 	1;
